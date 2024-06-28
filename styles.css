@@ -1,0 +1,28 @@
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: roboto;
+}
+
+#data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: black;
+}
+
+.droid-container{
+    max-width: 15em;
+    max-height: 15em;
+}
+
+.droid-name {
+    display: none;
+}
+
+.droid-img {
+    width: 100%;
+    border: 2px solid;
+}
