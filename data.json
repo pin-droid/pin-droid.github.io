@@ -1,681 +1,778 @@
 [
     {
-      "ID": 1,
-      "NAME": "Karate Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 1,
+        "name": "Karate Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 2,
+        "name": "Travolta Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 3,
+        "name": "Hippie Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 4,
+        "name": "Punk Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 5,
+        "name": "Snapboard Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 6,
+        "name": "Yosmamite Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 7,
+        "name": "Business Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 8,
+        "name": "Scottish Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 9,
+        "name": "Painter Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 10,
+        "name": "Tribal Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 11,
+        "name": "Blues Brothers Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 12,
+        "name": "Top Hat Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 13,
+        "name": "Singing Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 2,
-      "NAME": "Travolta Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 14,
+        "name": "3d glasses droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 3,
-      "NAME": "Hippie Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 15,
+        "name": "Dracula Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 4,
-      "NAME": "Punk Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 16,
+        "name": "Hockey Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 5,
-      "NAME": "Snapboard Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 17,
+        "name": "Basketball Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 6,
-      "NAME": "Yosmamite Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 18,
+        "name": "French Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 7,
-      "NAME": "Business Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 19,
+        "name": "Director Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 8,
-      "NAME": "Scottish Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 20,
+        "name": "Bronze Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 9,
-      "NAME": "Painter Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 21,
+        "name": "Chef Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 10,
-      "NAME": "Tribal Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 22,
+        "name": "Graduate Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 11,
-      "NAME": "Blues Brothers Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 23,
+        "name": "Bass Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 12,
-      "NAME": "Top Hat Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 24,
+        "name": "Viking Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 13,
-      "NAME": "Singing Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 25,
+        "name": "Suit Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 14,
-      "NAME": "3d glasses droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 26,
+        "name": "Sax Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 15,
-      "NAME": "Dracula Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 27,
+        "name": "Drum Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 16,
-      "NAME": "Hockey Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 28,
+        "name": "Book Droid (Blue)",
+        "img": "",
+        "count": 2,
+        "series": "yes",
+        "acquired": false
     },
     {
-      "ID": 17,
-      "NAME": "Basketball Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 29,
+        "name": "Bond Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 18,
-      "NAME": "French Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 30,
+        "name": "Trumpet Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 19,
-      "NAME": "Director Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 31,
+        "name": "Hiking Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 20,
-      "NAME": "Bronze Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 32,
+        "name": "Harp Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 21,
-      "NAME": "Chef Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 33,
+        "name": "Old Timey Director Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 22,
-      "NAME": "Graduate Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 34,
+        "name": "Suit #2 Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 23,
-      "NAME": "Bass Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 35,
+        "name": "Sumo Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 24,
-      "NAME": "Viking Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 36,
+        "name": "Pilot Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 25,
-      "NAME": "Suit Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 37,
+        "name": "Dragon Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 26,
-      "NAME": "Sax Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 38,
+        "name": "Shades Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 27,
-      "NAME": "Drum Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 39,
+        "name": "Red Dress Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 28,
-      "NAME": "Book Droid (Blue)",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": "yes"
+        "id": 40,
+        "name": "Matador Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 29,
-      "NAME": "Bond Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 41,
+        "name": "British Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 30,
-      "NAME": "Trumpet Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 42,
+        "name": "Toolbelt Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 31,
-      "NAME": "Hiking Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 43,
+        "name": "Yellow Tape Player Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 32,
-      "NAME": "Harp Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 44,
+        "name": "Pirate Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 33,
-      "NAME": "Old Timey Director Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 45,
+        "name": "Freddie Mercury Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 34,
-      "NAME": "Suit #2 Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 46,
+        "name": "Red Shorts Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 35,
-      "NAME": "Sumo Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 47,
+        "name": "Droid Head NEW",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 36,
-      "NAME": "Pilot Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 48,
+        "name": "Guitar Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 37,
-      "NAME": "Dragon Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 49,
+        "name": "Super Hero Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 38,
-      "NAME": "Shades Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 50,
+        "name": "Detective Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 39,
-      "NAME": "Red Dress Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 51,
+        "name": "Elvis Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 40,
-      "NAME": "Matador Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 52,
+        "name": "Baby Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 41,
-      "NAME": "British Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 53,
+        "name": "Piano Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 42,
-      "NAME": "Toolbelt Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 54,
+        "name": "Winter Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 43,
-      "NAME": "Yellow Tape Player Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 55,
+        "name": "Marilyn Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 44,
-      "NAME": "Pirate Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 56,
+        "name": "Inspector Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 45,
-      "NAME": "Freddie Mercury Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 57,
+        "name": "YouTuber Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 46,
-      "NAME": "Red Shorts Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 58,
+        "name": "Rapper Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 47,
-      "NAME": "Droid Head NEW",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 59,
+        "name": "Tennis Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 48,
-      "NAME": "Guitar Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 60,
+        "name": "Video Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 49,
-      "NAME": "Super Hero Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 61,
+        "name": "Book Droid (Red)",
+        "img": "",
+        "count": "",
+        "series": "yes",
+        "acquired": false
     },
     {
-      "ID": 50,
-      "NAME": "Detective Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 62,
+        "name": "White Gear Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 51,
-      "NAME": "Elvis Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 63,
+        "name": "Posh Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 52,
-      "NAME": "Baby Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 64,
+        "name": "Icon Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 53,
-      "NAME": "Piano Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 65,
+        "name": "Football Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 54,
-      "NAME": "Winter Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 66,
+        "name": "Gymnastics Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 55,
-      "NAME": "Marilyn Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 67,
+        "name": "Bull Chaser / Karate Red Belt Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 56,
-      "NAME": "Inspector Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 68,
+        "name": "zulu Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 57,
-      "NAME": "YouTuber Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 69,
+        "name": "Afro Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 58,
-      "NAME": "Rapper Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 70,
+        "name": "Golf Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 59,
-      "NAME": "Tennis Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 71,
+        "name": "Astronaut Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 60,
-      "NAME": "Video Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 72,
+        "name": "Figure Skater Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 61,
-      "NAME": "Book Droid (Red)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": "yes"
+        "id": 73,
+        "name": "Book Droid (Green)",
+        "img": "",
+        "count": "",
+        "series": "yes",
+        "acquired": false
     },
     {
-      "ID": 62,
-      "NAME": "White Gear Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 74,
+        "name": "Doctor Droid",
+        "img": "",
+        "count": 7,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 63,
-      "NAME": "Posh Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
+        "id": 75,
+        "name": "Dotted Pants Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 64,
-      "NAME": "Icon Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 76,
+        "name": "Normal Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 65,
-      "NAME": "Football Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 77,
+        "name": "Book on Head Droid (Green)",
+        "img": "",
+        "count": "",
+        "series": "yes",
+        "acquired": false
     },
     {
-      "ID": 66,
-      "NAME": "Gymnastics Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 78,
+        "name": "Beaker Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 67,
-      "NAME": "Bull Chaser / Karate Red Belt Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 79,
+        "name": "Book Droid (Yellow)",
+        "img": "",
+        "count": "",
+        "series": "yes",
+        "acquired": false
     },
     {
-      "ID": 68,
-      "NAME": "zulu Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 80,
+        "name": "Book on Head Droid (Blue)",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 69,
-      "NAME": "Afro Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 81,
+        "name": "Lightning God Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 70,
-      "NAME": "Golf Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 82,
+        "name": "Ski Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 71,
-      "NAME": "Astronaut Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 83,
+        "name": "Cyclist Droid",
+        "img": "",
+        "count": 2,
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 72,
-      "NAME": "Figure Skater Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 84,
+        "name": "Scuba Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     },
     {
-      "ID": 73,
-      "NAME": "Book Droid (Green)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": "yes"
-    },
-    {
-      "ID": 74,
-      "NAME": "Doctor Droid",
-      "IMG": "",
-      "COUNT": 7,
-      "SERIES": ""
-    },
-    {
-      "ID": 75,
-      "NAME": "Dotted Pants Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 76,
-      "NAME": "Normal Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 77,
-      "NAME": "Book on Head Droid (Green)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": "yes"
-    },
-    {
-      "ID": 78,
-      "NAME": "Beaker Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 79,
-      "NAME": "Book Droid (Yellow)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": "yes"
-    },
-    {
-      "ID": 80,
-      "NAME": "Book on Head Droid (Blue)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 81,
-      "NAME": "Lightning God Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 82,
-      "NAME": "Ski Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 83,
-      "NAME": "Cyclist Droid",
-      "IMG": "",
-      "COUNT": 2,
-      "SERIES": ""
-    },
-    {
-      "ID": 84,
-      "NAME": "Scuba Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 85,
-      "NAME": "Rasta Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 86,
-      "NAME": "Rugby Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 87,
-      "NAME": "Popcorn Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 88,
-      "NAME": "Blue Bow Tie Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 89,
-      "NAME": "Swimsuit Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 90,
-      "NAME": "Book on Head Droid (Yellow)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 91,
-      "NAME": "Dog Walk Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 92,
-      "NAME": "X",
-      "IMG": "",
-      "COUNT": 3,
-      "SERIES": ""
-    },
-    {
-      "ID": 93,
-      "NAME": "Runner Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 94,
-      "NAME": "Swimmer Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 95,
-      "NAME": "Walkie Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
-    },
-    {
-      "ID": 96,
-      "NAME": "Book on Head Droid (Red)",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": "yes"
-    },
-    {
-      "ID": 97,
-      "NAME": "Rocket Feet Droid",
-      "IMG": "",
-      "COUNT": "",
-      "SERIES": ""
+        "id": 85,
+        "name": "Rasta Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 86,
+        "name": "Rugby Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 87,
+        "name": "Popcorn Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 88,
+        "name": "Blue Bow Tie Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 89,
+        "name": "Swimsuit Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 90,
+        "name": "Book on Head Droid (Yellow)",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 91,
+        "name": "Dog Walk Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 92,
+        "name": "X",
+        "img": "",
+        "count": 3,
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 93,
+        "name": "Runner Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 94,
+        "name": "Swimmer Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 95,
+        "name": "Walkie Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
+    },
+    {
+        "id": 96,
+        "name": "Book on Head Droid (Red)",
+        "img": "",
+        "count": "",
+        "series": "yes",
+        "acquired": false
+    },
+    {
+        "id": 97,
+        "name": "Rocket Feet Droid",
+        "img": "",
+        "count": "",
+        "series": "",
+        "acquired": false
     }
-  ]
+]

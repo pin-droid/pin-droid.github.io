@@ -1,28 +1,104 @@
-
 html,
 body {
     margin: 0;
     height: 100%;
     font-family: roboto;
-}
-
-#data{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     background: black;
 }
 
-.droid-container{
-    max-width: 15em;
-    max-height: 15em;
+@font-face {
+    font-family: roboto;
+    src: url("./media/font/Roboto-Regular.ttf");
+}
+
+#explain{
+    color: white;
+    text-align: center;
+}
+
+h1{
+    margin: 0.5em 1em;
+}
+p{
+    margin: 0.3em 1em;
+    color: rgba(256, 256, 256, 0.7);
+    font-size: 90%;
+}
+a{
+    font-size: 150%;
+    color: blue;
+}
+
+#data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 1em 0em;
+}
+
+.droid-container {
+    max-width: 10em;
+    max-height: 10em;
+    position: relative;
+}
+
+.driod-acquired-text {
+    position: absolute;
+    top: 0;
+    color: red;
+    font-weight: bold;
+    margin: 0.2em 0.2em;
 }
 
 .droid-name {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* width: 100%; */
+    /* transform: translateX(-50%); */
+    /* right: 0; */
+    /* padding: 0 0.2em; */
+    background: white;
+    border-radius: 5px;
+    padding: 0 0.3em;
+    margin: 0 0.5em;
+    font-size: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .droid-img {
     width: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.found {}
+
+.acquired {
+    filter: contrast(200%) invert(100%) sepia(10%) saturate(0%) hue-rotate(90deg);
+    opacity: 0.4;
+}
+
+.locked {
+    filter: contrast(0%);
+}
+
+.faded{
+    background-color: #bd4b4b;
+}
+
+.droid-count {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 200%;
+    margin: 0.2em;
+    background: white;
+    padding: 0 0.3em;
     border: 2px solid;
+    border-radius: 50%;
+    opacity: 0.7;
 }

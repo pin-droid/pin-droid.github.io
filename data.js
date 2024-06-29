@@ -5,10 +5,34 @@ $.getJSON('data.json', function (data) {
     let out = ""
     data.forEach(element => {
         console.log(element);
+        let droidName = ""
+        let acquiredText = ""
+        let visibilityStatus = ""
+        let countStr = ""
+        if (element.acquired != undefined && element.acquired != null) {
+            if (element.acquired == true) {
+                visibilityStatus = "acquired"
+                acquiredText = `
+                    <div class="driod-acquired-text">ACQUIRED</div>
+                `
+            }
+        }
+        // if (element.count != undefined && element.count != null && element.count != "") {
+        //     countStr = `
+        //         <div class="droid-count">
+        //             ${element.count}
+        //         </div>
+        //     `
+        // }
+        droidName = `
+            <div class="droid-name ${visibilityStatus == "acquired" ? "faded" : ""}">${element.name}</div>
+        `
         out += `
             <div class="droid-container">
-                <div class="droid-name">${element.NAME}</div>
-                <img class="droid-img" src="/media/${element.ID}.jpg"/>
+                <img class="droid-img ${visibilityStatus}" src="/media/${element.id}.jpg"></img>
+                ${countStr}
+                ${droidName}
+                ${acquiredText}
             </div>
         `
         // document.getElementById("talks-container").innerHTML += `
