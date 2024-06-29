@@ -67,6 +67,32 @@ a{
     margin: 0.2em 0.2em;
 }
 
+.important-link{
+    background: white;
+    padding: 0.1em 1em;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0.5em 0em;
+}
+
+.driod-acquired-who {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+    color: white;
+    font-weight: bold;
+    margin: 0.2em 0.2em;
+    background: black;
+    padding: 0.1em;
+    width: 80%;
+    text-align: center;
+    font-size: 120%;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
 .droid-name {
     position: absolute;
     bottom: 0;

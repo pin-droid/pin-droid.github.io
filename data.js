@@ -6,7 +6,8 @@ function getObjectFromLine(line){
     return {
         "id": parseInt(split[0]),
         "got": split[1] === "TRUE" ? true : false,
-        "name": split[2].replaceAll("\r","")
+        "name": split[2].replaceAll("\r",""),
+        "who": split[3].replaceAll("\r","")
     }
 }
 
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 data.forEach(element => {
                     // console.log(element);
                     let droidName = ""
+                    let whoStr = ""
                     let acquiredText = ""
                     let visibilityStatus = ""
                     let countStr = ""
@@ -41,6 +43,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         acquiredText = `
                             <div class="driod-acquired-text">ACQUIRED</div>
                         `
+                        if(foundDataObj.who != ""){
+                            whoStr = `
+                                <div class="driod-acquired-who">${foundDataObj.who}</div>
+                            `
+                        }
                     }
                     // if (element.acquired != undefined && element.acquired != null) {
                     //     if (element.acquired == true) {
@@ -67,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             ${countStr}
                             ${droidName}
                             ${acquiredText}
+                            ${whoStr}
                         </div>
                     `
                 });
