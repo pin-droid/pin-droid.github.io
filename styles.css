@@ -29,6 +29,22 @@ a{
     color: blue;
 }
 
+#stats{
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    margin: 1em;
+}
+.stats-text{
+
+}
+
+.stats-span{
+    color: #52a203;
+    font-weight: bold;
+    font-size: 120%;
+}
+
 #data {
     display: flex;
     flex-wrap: wrap;

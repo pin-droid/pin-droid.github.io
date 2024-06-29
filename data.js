@@ -3,6 +3,8 @@
 $.getJSON('data.json', function (data) {
     console.log(data);
     let out = ""
+    let fullCount = data.length
+    let currentAcquired = 0
     data.forEach(element => {
         console.log(element);
         let droidName = ""
@@ -11,6 +13,7 @@ $.getJSON('data.json', function (data) {
         let countStr = ""
         if (element.acquired != undefined && element.acquired != null) {
             if (element.acquired == true) {
+                currentAcquired++
                 visibilityStatus = "acquired"
                 acquiredText = `
                     <div class="driod-acquired-text">ACQUIRED</div>
@@ -66,6 +69,11 @@ $.getJSON('data.json', function (data) {
         // });
     });
     document.getElementById("data").innerHTML = out
+    document.getElementById("stats").innerHTML = `
+        <div class="stats-text">
+            Acquired: <span class="stats-span">${currentAcquired}/${fullCount}</span>
+        </div>
+    `
 });
 //<div class="talk-title">${titleCase(talk.title)}</div>
 //
