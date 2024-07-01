@@ -3,11 +3,13 @@
 
 function getObjectFromLine(line) {
     let split = line.split(",")
+    console.log(split[4]);
     return {
         "id": parseInt(split[0]),
-        "got": split[1] === "TRUE" ? true : false,
+        "got": split[1].replaceAll("\r", "") === "TRUE" ? true : false,
         "name": split[2].replaceAll("\r", ""),
         "who": split[3].replaceAll("\r", ""),
+        "out": split[4].replaceAll("\r", "") === "TRUE" ? true : false,
         "type": "MANUAL"
     }
 }
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         console.log(data);
                         let out = ""
                         let fullCount = data.length
+                        let currentOutCount = 0
                         let currentAcquired = 0
                         data.forEach(element => {
                             // console.log(element);
@@ -63,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             let typeStr = ""
                             let typeStrDisplay = ""
                             let visibilityStatus = ""
+                            let currentAvailable = ""
                             let countStr = ""
+                            let notOutYetText = ""
                             let foundDataObjAuto = AutoCleanedData.find(a => a.id === element.id)
                             console.log(foundDataObjAuto);
                             if (foundDataObjAuto != undefined && foundDataObjAuto != null) {
@@ -93,31 +98,49 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                         `
                                     }
                                     typeStr = foundDataObj.type
+                                } else {
+                                    //add out andabout
+                                    if (foundDataObj != undefined && foundDataObj != null & foundDataObj.out === true) {
+                                        currentAvailable = "available"
+                                        currentOutCount++
+                                    } else {
+                                        currentAvailable = "reserve"
+                                        notOutYetText = `
+                                        <div class="not-out-yet-text">NOT out there yet... Soon!</div>
+                                    `
+                                    }
                                 }
+
                             }
                             droidName = `
                                 <div class="droid-name ${visibilityStatus == "acquired" ? "faded" : ""}">${element.name}</div>
                             `
-                            if(typeStr != ""){
+                            if (typeStr != "") {
                                 typeStrDisplay = `
-                                    <div class="droid-data-type ${typeStr}">${typeStr.substring(0,1)}</div>
+                                    <div class="droid-data-type ${typeStr}">${typeStr.substring(0, 1)}</div>
                                 `
                             }
                             out += `
-                                <div class="droid-container">
+                                <div class="droid-container ${currentAvailable}">
                                     <img class="droid-img ${visibilityStatus}" src="/media/${element.id}.jpg"></img>
                                     ${countStr}
                                     ${droidName}
                                     ${acquiredText}
                                     ${whoStr}
                                     ${typeStrDisplay}
+                                    ${notOutYetText}
                                 </div>
                             `
                         });
                         document.getElementById("data").innerHTML = out
                         document.getElementById("stats").innerHTML = `
                             <div class="stats-text">
-                                Acquired: <span class="stats-span">${currentAcquired}/${fullCount}</span>
+                                <div class="stat-line">    
+                                    Available Pins to find, NOW: <span class="current-out-label">${currentOutCount}</span>
+                                </div>
+                                <div class="stat-line">    
+                                    Acquired: <span class="stats-span">${currentAcquired}/${fullCount}</span>
+                                </div>
                             </div>
                         `
                     });

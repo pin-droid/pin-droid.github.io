@@ -72,7 +72,8 @@ a{
     padding: 0.1em 1em;
     border-radius: 5px;
     display: inline-block;
-    margin: 0.5em 0em;
+    font-size: 200%;
+    margin: 0.5em 0.5em;
 }
 
 .driod-acquired-who {
@@ -164,4 +165,38 @@ a{
 .AUTO{
     background: green;
     color: white;
+}
+
+.available{
+    opacity: 1;
+    filter: contrast(1);
+}
+
+.reserve{
+    opacity: 0.7;
+    filter: contrast(0.6);
+}
+
+.not-out-yet-text{
+    position: absolute;
+    color: white;
+    top: 0;
+    transform-origin: center;
+    transform: translateX(-50%);
+    /* white-space: nowrap; */
+    left: 50%;
+    width: 100%;
+    /* text-align: center; */
+    font-size: 100%;
+    margin: 5px 5px;
+}
+
+.stat-line{
+    display: inline-block;
+    margin-right: 1em;
+}
+.current-out-label{
+    color: #52a203;
+    font-weight: bold;
+    font-size: 120%;
 }
