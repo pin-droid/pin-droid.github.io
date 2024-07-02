@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
         .then(ff => {
             console.log(ff);
-            let AutoCleanedData = ff.split("\n").slice(1).map(e => cleanFromAutomatedFormResponse(e)).filter(a => a != null)
+            //IMPORTANT DO NOT CHANGE THE TEXT NUMBER OF LINES IN THE FORM
+            //10 removes all the first row of the form response
+            let AutoCleanedData = ff.split("\n").slice(10).map(e => cleanFromAutomatedFormResponse(e)).filter(a => a != null)
             console.log(AutoCleanedData);
 
             //in case of issues manual override
