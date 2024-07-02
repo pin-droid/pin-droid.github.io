@@ -1,9 +1,9 @@
 //SUCCESSFULLY have access to Jquery
 //Works
+const SPACE_BUFFER = 10
 
 function getObjectFromLine(line) {
     let split = line.split(",")
-    console.log(split[4]);
     return {
         "id": parseInt(split[0]),
         "got": split[1].replaceAll("\r", "") === "TRUE" ? true : false,
@@ -39,11 +39,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
             return dd.text()
         })
         .then(ff => {
-            console.log(ff);
             //IMPORTANT DO NOT CHANGE THE TEXT NUMBER OF LINES IN THE FORM
             //10 removes all the first row of the form response
             let AutoCleanedData = ff.split("\n").slice(10).map(e => cleanFromAutomatedFormResponse(e)).filter(a => a != null)
-            console.log(AutoCleanedData);
 
             //in case of issues manual override
             fetch("https://docs.google.com/spreadsheets/d/142pRmJfXE8EJ7Vbr1oPlAkswwlG8Yr8iYflTFsqjZ18/export?exportFormat=csv")
@@ -51,11 +49,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     return inner.text()
                 })
                 .then(innerTexr => {
-                    console.log(innerTexr);
                     let manualCleaned = innerTexr.split("\n").map(e => getObjectFromLine(e))
-                    console.log(manualCleaned);
                     $.getJSON('data.json', function (data) {
-                        console.log(data);
                         let out = ""
                         let fullCount = data.length
                         let currentOutCount = 0
@@ -72,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             let countStr = ""
                             let notOutYetText = ""
                             let foundDataObjAuto = AutoCleanedData.find(a => a.id === element.id)
-                            console.log(foundDataObjAuto);
                             if (foundDataObjAuto != undefined && foundDataObjAuto != null) {
                                 currentAcquired++
                                 visibilityStatus = "acquired"
@@ -81,13 +75,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                 `
                                 if (foundDataObjAuto.who != "") {
                                     whoStr = `
-                                        <div class="driod-acquired-who">${foundDataObjAuto.who}</div>
+                                        <div class="driod-acquired-who-container">
+                                            <div class="driod-acquired-who">${foundDataObjAuto.who}</div>
+                                            ${foundDataObjAuto.photo != "" ? `<div class="driod-acquired-who-img-icon" onclick="displayDialog('${foundDataObjAuto.photo}')">📸</div>` : ""}
+                                        </div>
                                     `
                                 }
                                 typeStr = foundDataObjAuto.type
                             } else {
                                 let foundDataObj = manualCleaned.find(a => a.id === element.id)
-                                console.log(foundDataObj);
                                 if (foundDataObj != undefined && foundDataObj != null & foundDataObj.got === true) {
                                     currentAcquired++
                                     visibilityStatus = "acquired"
@@ -157,3 +153,85 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
 
+window.displayDialog = (content) => {
+    console.log(content);
+    let fileId = content.split("=")[1]
+    console.log(fileId);
+    let cc = `
+        <div class="image-container">
+            <img src="https://drive.google.com/thumbnail?id=${fileId}" />
+            <div class="x-button" onclick="killDialog()">X</div>
+        </div>
+    `
+    displayGenericHoverDialogWithContent(cc)
+}
+
+window.killDialog = () => {
+    hideGenericHoverDialog()
+}
+
+
+function getSizeOfElement(elem) {
+    document.body.appendChild(elem)
+    let rect = elem.getBoundingClientRect()
+    document.body.removeChild(elem)
+    return rect
+}
+
+function baseDisplayDialog(contents, anchor, containerAdditionalClasses, position) {
+    hideGenericHoverDialog()
+    var e = window.event
+    var posX = 100
+    var posY = 100
+
+    if (e != undefined) {
+        // posX = e.clientX + SPACE_BUFFER
+        // posY = e.clientY + SPACE_BUFFER
+        posX = e.pageX + SPACE_BUFFER
+        posY = e.pageY + SPACE_BUFFER
+    }
+
+    let htmlText = `
+        <div class="generic-dialog-container ${containerAdditionalClasses}">
+            ${contents}
+        </div>
+    `
+    var dialogBox = document.createElement('div')
+    dialogBox.id = 'generic-dialog'
+    dialogBox.innerHTML = htmlText
+    dialogBox.style.top = `${posY}px`
+    dialogBox.style.left = `${posX}px`
+
+    let size = getSizeOfElement(dialogBox)
+
+    if (posX + size.width >= window.innerWidth) {
+        dialogBox.style.maxWidth = "50%"
+        dialogBox.style.whiteSpace = "normal"
+
+        let remeasure = getSizeOfElement(dialogBox)
+        if (posX + remeasure.width >= window.innerWidth) {
+            dialogBox.style.right = `${window.innerWidth - posX + SPACE_BUFFER}px`
+            dialogBox.style.left = "unset"
+        }
+    }
+    if (posY + size.height >= window.innerHeight) {
+        dialogBox.style.bottom = `${window.innerHeight - posY + SPACE_BUFFER}px`
+        dialogBox.style.top = "unset"
+    }
+    document.body.appendChild(dialogBox)
+}
+
+function displayGenericHoverDialogWithContent(contentHTML) {
+    baseDisplayDialog(contentHTML)
+}
+
+function hideGenericHoverDialog() {
+    let otherelem = document.getElementById('all-next-steps-dialog')
+    if (otherelem != undefined && otherelem != null) {
+        document.body.removeChild(otherelem)
+    }
+    let elem = document.getElementById('generic-dialog')
+    if (elem != undefined && elem != null) {
+        document.body.removeChild(elem)
+    }
+}

@@ -11,35 +11,36 @@ body {
     src: url("./media/font/Roboto-Regular.ttf");
 }
 
-#explain{
+#explain {
     color: white;
     text-align: center;
 }
 
-h1{
+h1 {
     margin: 0.5em 1em;
 }
-p{
+
+p {
     margin: 0.3em 1em;
     color: rgba(256, 256, 256, 0.7);
     font-size: 90%;
 }
-a{
+
+a {
     font-size: 150%;
     color: blue;
 }
 
-#stats{
+#stats {
     color: white;
     text-align: center;
     font-size: 200%;
     margin: 1em;
 }
-.stats-text{
 
-}
+.stats-text {}
 
-.stats-span{
+.stats-span {
     color: #52a203;
     font-weight: bold;
     font-size: 120%;
@@ -67,7 +68,7 @@ a{
     margin: 0.2em 0.2em;
 }
 
-.important-link{
+.important-link {
     background: white;
     padding: 0.1em 1em;
     border-radius: 5px;
@@ -76,7 +77,7 @@ a{
     margin: 0.5em 0.5em;
 }
 
-.driod-acquired-who {
+.driod-acquired-who-container {
     position: absolute;
     bottom: 20%;
     left: 50%;
@@ -92,6 +93,12 @@ a{
     border-radius: 5px;
     overflow: hidden;
     border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+
+.driod-acquired-who {
+    flex: 1
 }
 
 .droid-name {
@@ -129,7 +136,7 @@ a{
     filter: contrast(0%);
 }
 
-.faded{
+.faded {
     background-color: #bd4b4b;
 }
 
@@ -146,7 +153,7 @@ a{
     opacity: 0.7;
 }
 
-.droid-data-type{
+.droid-data-type {
     position: absolute;
     top: 0;
     right: 0;
@@ -157,27 +164,27 @@ a{
     border: solid 1px;
 }
 
-.MANUAL{
+.MANUAL {
     background: blue;
     color: white;
 }
 
-.AUTO{
+.AUTO {
     background: green;
     color: white;
 }
 
-.available{
+.available {
     opacity: 1;
     filter: contrast(1);
 }
 
-.reserve{
+.reserve {
     opacity: 0.7;
     filter: contrast(0.6);
 }
 
-.not-out-yet-text{
+.not-out-yet-text {
     position: absolute;
     color: white;
     top: 0;
@@ -191,12 +198,50 @@ a{
     margin: 5px 5px;
 }
 
-.stat-line{
+.stat-line {
     display: inline-block;
     margin-right: 1em;
 }
-.current-out-label{
+
+.current-out-label {
     color: #52a203;
     font-weight: bold;
     font-size: 120%;
+}
+
+
+.generic-dialog-container {
+    background: white;
+    padding: 0.3em 0.5em;
+    font-size: 110%;
+    border-radius: 5px;
+    /* max-width: 60%; */
+    box-shadow: 1px 1px 4px 2px;
+}
+
+.generic-dialog-container-inner {
+    /* max-width: 25em; */
+}
+
+#generic-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+.image-container {
+    position: relative;
+}
+
+.x-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    padding: 0.1em 0.3em;
+    border-radius: 50%;
+    margin: 0.3em 0.2em;
+    border: solid;
 }
