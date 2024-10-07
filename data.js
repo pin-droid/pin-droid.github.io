@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                     <div class="driod-acquired-text">ACQUIRED</div>
                                 `
                                 if (foundDataObjAuto.who != "") {
-                                            //${foundDataObjAuto.photo != "" ? `<div class="driod-acquired-who-img-icon" onclick="displayDialog('${foundDataObjAuto.photo}')">📸</div>` : ""}
                                     whoStr = `
                                         <div class="driod-acquired-who-container">
-                                            <div class="driod-acquired-who">???</div>
+                                            <div class="driod-acquired-who">${foundDataObjAuto.who}</div>
+                                            ${foundDataObjAuto.photo != "" ? `<div class="driod-acquired-who-img-icon" onclick="displayDialog('${foundDataObjAuto.photo}')">📸</div>` : ""}
                                         </div>
                                     `
                                 }
@@ -91,10 +91,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                         <div class="driod-acquired-text">ACQUIRED</div>
                                     `
                                     if (foundDataObj.who != "") {
-
-                                            //<div class="driod-acquired-who">${foundDataObj.who}</div>
                                         whoStr = `
-                                            <div class="driod-acquired-who">???</div>
+                                            <div class="driod-acquired-who">${foundDataObj.who}</div>
                                         `
                                     }
                                     typeStr = foundDataObj.type
