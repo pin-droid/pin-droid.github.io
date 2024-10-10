@@ -5,33 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pin-Droid</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="media/ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="media/ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/ico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/pin-droid-ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="media/pin-droid-ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/pin-droid-ico/favicon-16x16.png">
     <link rel="stylesheet" href="styles.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-    <script src="data.js"></script>
+    <script src="pin-droid-index.js"></script>
 </head>
 
-<body>
-    <div id="overall">
-        <div id="explain">
-            <h1>Welcome to the Pin-Droid-Dex</h1>
-            <p>Below you will see a full list of all of the available pins that can be acquired/found during this
-                event...</p>
-            <p>There will be a variety of ways of winning/finding/getting your hands on these pins, most likely you will
-                get more clues and prompts from this Twitter Channel: </p>
-            <a href="https://x.com/pin_droid">Twitter @Pin_Droid</a>
-            <p>So be sure to follow that channel to keep constantly up to date with anymore information coming out, so
-                that you might be the first person to acquire the next pin...</p>
-            <p>Once you FIND a pin, i simply ask that you fill in this very very quick form below, so that I (maintainer
-                of all this) can be notified about which pins have been got!</p>
-            <a href="https://forms.gle/f61DGVG85sVj3e4H6" class="important-link">Complete this form for every Pin you get!</a>
-            <p>Thank you and Good Luck!</p>
+<body class="pin-droid">
+    <div id="overall" class="background-overlay">
+        <div class="card-container">
+            <img src="media/images-general/pindroid-logo.png" alt="" style="width: 14em;">
+            <h1>London 2024</h1>
+            <div class="card">
+                <p>To register please complete this form:</p>
+                <a href="">Register for Pin-Droid Here</a>
+            </div>
+            <div class="card">
+                <div id="leader-board"></div>
+            </div>
+            <div style="text-align: center;">
+                <h2>These are the available pins...</h2>
+                <div id="available-pins"></div>
+            </div>
+            <div class="card">
+                <p>When you find a pin, scan the QR code...</p>
+            </div>
+            <!-- <div class="card">
+                <p>Below you will see a full list of all of the available pins that can be acquired/found during this
+                    event...</p>
+                <p>There will be a variety of ways of winning/finding/getting your hands on these pins, most likely you will
+                    get more clues and prompts from this Twitter Channel: </p>
+                <a href="https://x.com/pin_droid">Twitter @Pin_Droid</a>
+                <p>So be sure to follow that channel to keep constantly up to date with anymore information coming out, so
+                    that you might be the first person to acquire the next pin...</p>
+                <p>Once you FIND a pin, i simply ask that you fill in this very very quick form below, so that I (maintainer
+                    of all this) can be notified about which pins have been got!</p>
+                <a href="https://forms.gle/f61DGVG85sVj3e4H6" class="important-link">Complete this form for every Pin you get!</a>
+                <p>Thank you and Good Luck!</p>
+            </div> -->
+        <!-- <div style="height: 20em;"></div> -->
+
         </div>
-        <div id="stats"></div>
-        <div id="data"></div>
+        <!-- <div id="stats"></div>
+        <div id="data"></div> -->
     </div>
 
 </body>

@@ -1,4 +1,21 @@
-html,
+:root {
+    --main-green: #026a34;
+    --background-green: #00813e;
+    --white: #ffffff;
+    --black: #000000;
+    --border-green: #00a14e;
+    --darker-green: #026a34;
+    --points-yellow: #dfb756;
+    --darker-yellow: #e58d49;
+    --much-darker-yellow: #c3783f;
+    --red: #e5543b;
+}
+
+html {
+    margin: 0;
+    height: 100%;
+}
+
 body {
     margin: 0;
     height: 100%;
@@ -11,19 +28,172 @@ body {
     src: url("./media/font/Roboto-Regular.ttf");
 }
 
+body.pin-droid {
+    margin: 0;
+    /* height: 100%;
+    width: 100%; */
+    font-family: rubik;
+    /* background: rgb(2, 105, 52); */
+    /* background: linear-gradient(45deg, #009046, #026a34); */
+    background: var(--background-green)
+
+}
+
+.background-overlay {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 30%, transparent 0);
+    /* background-image:     linear-gradient(
+        rgba(255, 0, 0, 0.45), 
+        rgba(255, 0, 0, 0.45)
+      ),url(./media/images-general/pindroid-logo.png); */
+    /* background-image: url(./media/images-general/pindroid-logo.png); */
+    background-size: 20px 20px;
+    /* height: 100%;
+    width: 100%; */
+    background-repeat: repeat;
+    animation: background-move 5s linear infinite;
+}
+
+@keyframes background-move {
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+@font-face {
+    font-family: rubik;
+    src: url("./media/font/RubikMonoOne-Regular.ttf");
+}
+
+.pin-droid-logo {}
+
+.card {
+    background: white;
+    padding: 1em;
+    /* margin: 0.5em; */
+    margin: 1em;
+    border-radius: 10px;
+    border: 0.25em solid var(--darker-green);
+    /* border: 0.25em solid var(--border-green); */
+    color: black;
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100%;
+    
+}
+
+#available-pins{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.pin-image-container{
+    position: relative;
+}
+
+.pin-image{
+    width: 10em;
+    border-radius: 50%;
+    /* border: 0.25em solid var(--border-green); */
+    border: 0.25em solid var(--white);
+}
+
+.pin-image-text-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    /* bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-wrap: nowrap; */
+    /* background: var(--border-green); */
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    gap: 0.1em;
+}
+
+.pin-image-title{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+    text-wrap: nowrap;
+    background: var(--darker-green);
+    padding: 0em 0.2em;
+    border-radius: 5px;
+}
+
+.pin-image-points{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+}
+
+.pin-image-amount{
+    position: absolute;
+    bottom: 0;
+    /* left: 50%; */
+    right: 0;
+    transform: translate(0%, -120%);
+    text-wrap: nowrap;
+    /* text-wrap: nowrap; */
+    background: var(--red);
+    color: var(--white);
+    padding: 0em 0.2em;
+    font-size: 120%;
+    border-radius: 5px;
+}
+
 #explain {
     color: white;
     text-align: center;
 }
 
+b.points-text{
+    background: var(--points-yellow);
+    color: var(--much-darker-yellow);
+    padding: 0em 0.2em;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    padding-left: 2em;
+    left: 50%;
+    z-index: -1;
+}
+
+b.point-value{
+    color: var(--white);
+    background: var(--black);
+    border-radius: 50%;
+    padding: 0.1em 0.3em;
+    font-size: 200%;
+}
+
 h1 {
-    margin: 0.5em 1em;
+    margin: 0.25em 1em;
+    font-size: 250%;
 }
 
 p {
     margin: 0.3em 1em;
-    color: rgba(256, 256, 256, 0.7);
-    font-size: 90%;
+    /* color: rgba(256, 256, 256, 0.7); */
 }
 
 a {

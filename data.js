@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             }
                             out += `
                                 <div class="droid-container ${currentAvailable}">
-                                    <img class="droid-img ${visibilityStatus}" src="/media/${element.id}.jpg"></img>
+                                    <img class="droid-img ${visibilityStatus}" src="/media/android-pins/${element.id}.jpg"></img>
                                     ${countStr}
                                     ${droidName}
                                     ${acquiredText}

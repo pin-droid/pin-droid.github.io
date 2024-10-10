@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "San Fran 1",
+        "img": "san-fran-1",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 2,
+        "name": "Berlin 1",
+        "img": "berlin-1",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 3,
+        "name": "Berlin 1",
+        "img": "san-fran-2",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 4,
+        "name": "Berlin 1",
+        "img": "paris-1",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 5,
+        "name": "Berlin 1",
+        "img": "paris-2",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 6,
+        "name": "Berlin 1",
+        "img": "bug-droid",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 7,
+        "name": "Berlin 1",
+        "img": "london-1",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 8,
+        "name": "Berlin 1",
+        "img": "berlin-2",
+        "points": 3,
+        "total": 10
+    },
+    {
+        "id": 9,
+        "name": "Berlin 1",
+        "img": "new-york-1",
+        "points": 3,
+        "total": 10
+    }
+]
