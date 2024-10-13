@@ -36,7 +36,6 @@ body.pin-droid {
     /* background: rgb(2, 105, 52); */
     /* background: linear-gradient(45deg, #009046, #026a34); */
     background: var(--background-green)
-
 }
 
 .background-overlay {
@@ -51,6 +50,10 @@ body.pin-droid {
     width: 100%; */
     background-repeat: repeat;
     animation: background-move 5s linear infinite;
+
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 @keyframes background-move {
@@ -78,17 +81,56 @@ body.pin-droid {
     text-align: center;
 }
 
-.card-container{
+.info-text{
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.4)
+}
+
+#twitter-container {
+
+
+    width: 30%;
+    height: 100%;
+    overflow: scroll;
+    max-height: 100%;
+}
+
+.card-container-link {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    color: white;
+    /* height: 100%; */
+    /* width: 70%; */
+    /* overflow: scroll; */
+    align-items: center;
+    /* height: 100%; */
+    height: 100% !important;
+}
+
+.card-container {
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     height: 100%;
-    
+    */
+
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+    /* height: 100%; */
+    width: 70%;
+    overflow: scroll;
 }
 
-#available-pins{
+#available-pins {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -96,18 +138,18 @@ body.pin-droid {
     justify-content: center;
 }
 
-.pin-image-container{
+.pin-image-container {
     position: relative;
 }
 
-.pin-image{
+.pin-image {
     width: 10em;
     border-radius: 50%;
     /* border: 0.25em solid var(--border-green); */
     border: 0.25em solid var(--white);
 }
 
-.pin-image-text-container{
+.pin-image-text-container {
     position: absolute;
     top: 0;
     left: 50%;
@@ -126,7 +168,7 @@ body.pin-droid {
     gap: 0.1em;
 }
 
-.pin-image-title{
+.pin-image-title {
     position: absolute;
     top: 0;
     left: 50%;
@@ -138,7 +180,7 @@ body.pin-droid {
     border-radius: 5px;
 }
 
-.pin-image-points{
+.pin-image-points {
     position: absolute;
     bottom: 0;
     left: 25%;
@@ -146,7 +188,7 @@ body.pin-droid {
     text-wrap: nowrap;
 }
 
-.pin-image-amount{
+.pin-image-amount {
     position: absolute;
     bottom: 0;
     /* left: 50%; */
@@ -166,7 +208,7 @@ body.pin-droid {
     text-align: center;
 }
 
-b.points-text{
+b.points-text {
     background: var(--points-yellow);
     color: var(--much-darker-yellow);
     padding: 0em 0.2em;
@@ -178,7 +220,7 @@ b.points-text{
     z-index: -1;
 }
 
-b.point-value{
+b.point-value {
     color: var(--white);
     background: var(--black);
     border-radius: 50%;
