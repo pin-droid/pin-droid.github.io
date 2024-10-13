@@ -1,5 +1,6 @@
 //SUCCESSFULLY have access to Jquery
 const AVAILABLE_PINS_DIV = "available-pins";
+const LEADER_BOARD_DIV = "leader-board-data";
 
 //Works
 // const SPACE_BUFFER = 10
@@ -53,9 +54,53 @@ function displayAvailablePins() {
     });
 }
 
+function getCombo() {
+    fetch("https://docs.google.com/spreadsheets/d/1WFu4TilKMHZXACtd5y6r4t6UoLZjS5z-IosFqgqO2gA/export?exportFormat=csv&gid=304234329#gid=304234329") //gid=516779236#gid=516779236
+        .then(dd => {
+            return dd.text()
+        })
+        .then(ff => {
+            console.log(ff)
+            displayScores(ff)
+        }).catch(err => {
+
+        })
+}
+
+function displayScores(scoreData) {
+    let splitByLine = scoreData.split("\n");
+    console.log(splitByLine);
+    splitByLine.shift();
+    console.log(splitByLine);
+    let objs = []
+    let out = ""
+    splitByLine.forEach(element => {
+        let elements = element.split(",");
+        let name = elements[1];
+        let score = elements[2];
+        console.log(name);
+        console.log(score);
+        objs.push({ "name": name, "score": score })
+    });
+    objs.sort((a, b) => a.score - b.score).reverse();
+
+    objs.forEach((obj, idx) => {
+        out += `
+            <div class="leader-board-entry">
+                <div class="leader-board-entry-rank">${idx + 1}</div>
+                <div class="leader-board-entry-name">${obj.name}</div>
+                <div class="leader-board-entry-score">${obj.score}</div>
+            </div>
+        `
+    });
+    document.getElementById(LEADER_BOARD_DIV).innerHTML = out
+}
+
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
     displayAvailablePins();
+    getCombo();
+    //TODO add search option for leader board
 
     // fetch("https://docs.google.com/spreadsheets/d/142pRmJfXE8EJ7Vbr1oPlAkswwlG8Yr8iYflTFsqjZ18/export?exportFormat=csv&gid=289434024#gid=289434024")
     //     .then(dd => {
