@@ -81,19 +81,21 @@ body.pin-droid {
     text-align: center;
 }
 
-.info-text{
+.info-text {
     font-style: italic;
     color: rgba(0, 0, 0, 0.4)
 }
-#leader-board-data{
+
+#leader-board-data {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
+    width: 100%;
     /* max-height: 80%; */
     overflow: scroll;
 }
 
-.leader-board-entry{
+.leader-board-entry {
     display: flex;
     justify-content: space-between;
     border: 3px solid rgba(0, 0, 0, 0.3);
@@ -102,24 +104,83 @@ body.pin-droid {
     padding: 0.5em;
 }
 
-.leader-board-entry-name{
+.leader-board-entry-name {
     font-size: 120%;
 }
 
-.leader-board-entry-score{
-    background: black;
+.leader-board-entry-score {
+    background: var(--main-green);
     color: white;
     padding: 0.2em 0.4em;
     font-size: 150%;
-    border-radius: 50%;
+    border-radius: 10px;
 }
 
-.leader-board-entry-rank{
-    background: black;
+.leader-board-entry-rank {
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     padding: 0.2em 0.4em;
     font-size: 120%;
     border-radius: 50%;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 120deg;
+}
+
+/* @property --l {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 10%;
+}
+
+@property --c {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: red;
+} */
+
+/* @property --one {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+
+@property --two {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #dac616;
+} */
+
+.first {
+    background: repeating-linear-gradient(var(--angle), white, #dac616, #eaa608, #dac616, white);
+    animation: shimmer 3s ease infinite alternate;
+}
+
+@keyframes shimmer {
+    /* from {
+        --angle: 200deg
+    } */
+
+    100% {
+        --angle: 340deg;
+    }
+}
+
+.second {
+    background: repeating-linear-gradient(var(--angle), white, #959595, #7b7975, #959595, white);
+    /* animation: shimmer 3s ease infinite alternate; */
+}
+
+.third {
+    background: repeating-linear-gradient(var(--angle), white, #e16912, #c8590a, #e16912, white);
+    /* animation: shimmer 3s ease infinite alternate; */
+}
+
+.zero {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #twitter-container {
@@ -146,23 +207,39 @@ body.pin-droid {
     height: 100% !important;
 }
 
+/* Small Tablet? */
+@media screen and (max-width: 1027px) {}
+
+.example-image {
+    border: 4px solid var(--white);
+    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 2em;
+}
+
+/* Phone */
+@media screen and (max-width: 500px) {
+    .example-image {
+        width: 80%;
+    }
+}
+
+.score-card {
+    /* width: 90%; */
+    /* text-align: center; */
+    /* min-height: 10%; */
+}
+
 .card-container {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 100%;
-    */
-
-
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
     color: white;
     /* height: 100%; */
-    width: 70%;
+    /* width: 70%; */
+    width: 100%;
+    text-align: center;
     overflow: scroll;
 }
 
@@ -492,4 +569,60 @@ a {
     border-radius: 50%;
     margin: 0.3em 0.2em;
     border: solid;
+}
+
+.rank-icon-image {
+    width: 3em;
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.leader-board-entry-left {
+    display: flex;
+    /* justify-content: center; */
+    gap: 1em;
+    align-items: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 15px;
+    aspect-ratio: 1;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin: 0.5em 0;
+    transform: translate(-50%, -50%);
+    color: var(--main-green);
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--main-green);
+}
+
+.loader::before {
+    box-shadow: -25px 0;
+    animation: l8-1 1s infinite linear;
+}
+
+.loader::after {
+    transform: rotate(0deg) translateX(25px);
+    animation: l8-2 1s infinite linear;
+}
+
+@keyframes l8-1 {
+    100% {
+        transform: translateX(25px)
+    }
+}
+
+@keyframes l8-2 {
+    100% {
+        transform: rotate(-180deg) translateX(25px)
+    }
 }

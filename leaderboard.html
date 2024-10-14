@@ -11,27 +11,20 @@
     <link rel="stylesheet" href="styles.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-    <script src="code-checker.js"></script>
+    <script src="pin-droid-leader-board.js"></script>
 </head>
 
 <body class="pin-droid">
     <div id="overall" class="background-overlay">
-        <div class="card-container-link" style="width: 100%;">
-            <img src="media/images-general/pindroid-logo.png" alt="" style="width: 10em;" onclick="location.href = '/'">
-            <div class="card">
-                <h3>Congratulations!</h3>
-                <h5>You found a pin!</h5>
-                <div class="info-text">To register your pin and earn your points, simply follow the link below...</div>
+        <div class="card-container">
+            <img src="media/images-general/pindroid-logo.png" alt="" style="width: 14em;" onclick="location.href = '/'">
+            <h1>Current Scores!</h1>
+            <div class="card score-card" style="min-width: 90%;">
+                <div id="loader" class="loader"></div>
+                <div id="leader-board-data" style="display: none;"></div>
             </div>
-            <div class="card">
-                <a id="codelink" href="" style="display: none;">Click Me! </br>(Pin Acquired Form...)</a>
-            </div>
-
-
         </div>
-        <!-- <div id="stats"></div>
-        <div id="data"></div> -->
     </div>
-
 </body>
+
 </html>
