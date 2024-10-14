@@ -216,13 +216,12 @@ body.pin-droid {
     width: 50%;
     margin-bottom: 2em;
 }
-
-/* Phone */
-@media screen and (max-width: 500px) {
-    .example-image {
-        width: 80%;
-    }
+.pin-container{
+    text-align: center;
+    width: 75%;
 }
+
+
 
 .score-card {
     /* width: 90%; */
@@ -242,6 +241,7 @@ body.pin-droid {
     text-align: center;
     overflow: scroll;
 }
+
 
 #available-pins {
     display: flex;
@@ -624,5 +624,21 @@ a {
 @keyframes l8-2 {
     100% {
         transform: rotate(-180deg) translateX(25px)
+    }
+}
+/* Phone */
+@media screen and (max-width: 500px) {
+    .example-image {
+        width: 80%;
+    }
+    .pin-container {
+        text-align: center;
+        width: 100%;
+    }
+    .pin-image{
+        width: 8em;
+    }
+    .pin-image-text-container{
+        font-size: 80%;
     }
 }
