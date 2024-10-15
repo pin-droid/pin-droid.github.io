@@ -19,6 +19,21 @@
         <div class="card-container">
             <img src="media/images-general/pindroid-logo.png" alt="" style="width: 14em;" onclick="location.href = '/'">
             <h1>Current Scores!</h1>
+            <p>ties breakers are...</p>
+            <div class="card pin-stats-card" style="min-width: 90%;">
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Total Pins:</div>
+                    <div class="pin-stats-value" id="pins-total-count">0</div>
+                </div>
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Pins Found:</div>
+                    <div class="pin-stats-value" id="pins-found-count">0</div>
+                </div>
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Pins Left:</div>
+                    <div class="pin-stats-value" id="pins-left-count">0</div>
+                </div>
+            </div>
             <div class="card score-card" style="min-width: 90%;">
                 <div id="loader" class="loader"></div>
                 <div id="leader-board-data" style="display: none;"></div>
