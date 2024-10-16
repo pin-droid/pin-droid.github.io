@@ -67,17 +67,29 @@ body.pin-droid {
     src: url("./media/font/RubikMonoOne-Regular.ttf");
 }
 
+.info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 0em 0.5em;
+}
 
-.pin-stats-card{
+#player-count {
+    font-size: 300%;
+    background: black;
+    border-radius: 10px;
+    padding: 0px 0.25em;
+}
+
+.pin-stats-card {
     display: flex;
     justify-content: space-around;
 }
 
-.pin-stats-title{
+.pin-stats-title {}
 
-}
-
-.pin-stats-value{
+.pin-stats-value {
     font-size: 200%;
 }
 
@@ -207,7 +219,7 @@ body.pin-droid {
     max-height: 100%;
 }
 
-.leader-board-entry-space{
+.leader-board-entry-space {
     display: flex;
     gap: 0.5em;
     justify-content: center;
@@ -341,9 +353,12 @@ body.pin-droid {
 .pin-image-points {
     position: absolute;
     bottom: 0;
-    left: 25%;
+    left: 50%;
     transform: translateX(-50%);
     text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .pin-image-amount {
@@ -367,23 +382,27 @@ body.pin-droid {
 }
 
 b.points-text {
-    background: var(--points-yellow);
-    color: var(--much-darker-yellow);
+    background: var(--black);
+    /* color: var(--white); */
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 80%;
+    opacity: ;
     padding: 0em 0.2em;
     border-radius: 5px;
-    position: absolute;
+    font-style: italic;
+    /* position: absolute; */
     bottom: 0;
-    padding-left: 2em;
+    /* padding-left: 2em; */
     left: 50%;
-    z-index: -1;
+    /* z-index: -1;*/
 }
 
 b.point-value {
     color: var(--white);
     background: var(--black);
-    border-radius: 50%;
+    border-radius: 10px;
     padding: 0.1em 0.3em;
-    font-size: 200%;
+    font-size: 150%;
 }
 
 h1 {

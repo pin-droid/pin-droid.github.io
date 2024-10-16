@@ -5,8 +5,12 @@ const PINS_TOTAL_DIV = "pins-total-count"
 const PINS_FOUND_DIV = "pins-found-count"
 const PINS_LEFT_DIV = "pins-left-count"
 
+//Publically viewable sheets - data underlying it is not public
+const STATS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1572919526#gid=1572919526"
+const SCORES_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=0#gid=0"
+
 function getCombo() {
-    fetch("https://docs.google.com/spreadsheets/d/1WFu4TilKMHZXACtd5y6r4t6UoLZjS5z-IosFqgqO2gA/export?exportFormat=csv&gid=132193440#gid=132193440") //gid=516779236#gid=516779236
+    fetch(STATS_URL)
         .then(dd => {
             return dd.text()
         })
@@ -15,7 +19,7 @@ function getCombo() {
         }).catch(err => {
 
         })
-    fetch("https://docs.google.com/spreadsheets/d/1WFu4TilKMHZXACtd5y6r4t6UoLZjS5z-IosFqgqO2gA/export?exportFormat=csv&gid=304234329#gid=304234329") //gid=516779236#gid=516779236
+    fetch(SCORES_URL)
         .then(dd => {
             return dd.text()
         })
@@ -52,11 +56,11 @@ function displayScores(scoreData) {
     let out = ""
     splitByLine.forEach(element => {
         let elements = element.split(",");
-        let name = elements[1];
-        let score = elements[2];
-        let pinsFound = elements[3];
-        let pinsGiven = elements[4];
-        let pinsReceived = elements[5];
+        let name = elements[0];
+        let score = elements[1];
+        let pinsFound = elements[2];
+        let pinsGiven = elements[3];
+        let pinsReceived = elements[4];
         console.log(name);
         console.log(score);
         console.log(pinsFound);

@@ -1,40 +1,84 @@
 const AVAILABLE_PINS_DIV = "available-pins";
 
+const PLAYER_COUNT_DIV = "player-count"
+const STATS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1572919526#gid=1572919526"
+const PIN_POINTS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1871628007#gid=1871628007"
+
 function displayAvailablePins() {
     $.getJSON('./droidcon-pins.json', function (data) {
-        let out = "";
-        data.forEach(element => {
-            console.log(element);
-            out += `
-                <div class="pin-image-container">
-                    <img class="pin-image" src="/media/droidcon-place-pins/${element.img}.png"/>
-                    <div class="pin-image-text-container">
-                        <div class="pin-image-title">${element.name}</div>
-                        <div class="pin-image-points"><b class="point-value">${element.points}</b> <b class="points-text">points</b></div>
-                        <div class="pin-image-amount">x${element.total}</div>
-                    </div>
-                </div>
-            `
-        });
-        document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
+        fetch(PIN_POINTS_URL)
+            .then(dd => {
+                return dd.text()
+            })
+            .then(d => {
+                let splitByLine = d.split("\n");
+                let oo = splitByLine.map(a => ({ "id": a.split(",")[0], "value": a.split(",")[1].replace("\r","") }))
+                return oo
+            })
+            .then(pinvalues => {
+                let out = "";
+                data.forEach(element => {
+                    console.log(element);
+                    out += `
+                        <div class="pin-image-container">
+                            <img class="pin-image" src="/media/droidcon-place-pins/${element.img}.png"/>
+                            <div class="pin-image-text-container">
+                                <div class="pin-image-title">${element.name}</div>
+                                <div class="pin-image-points"><b class="point-value">${pinvalues[element.id - 1].value}</b> <b class="points-text">points</b></div>
+                                <div class="pin-image-amount">x${element.total}</div>
+                            </div>
+                        </div>
+                    `
+                });
+                document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
+            }).catch(err => {
+                console.log(err);
+
+
+            })
+        // let out = "";
+        // data.forEach(element => {
+        //     console.log(element);
+        //     out += `
+        //         <div class="pin-image-container">
+        //             <img class="pin-image" src="/media/droidcon-place-pins/${element.img}.png"/>
+        //             <div class="pin-image-text-container">
+        //                 <div class="pin-image-title">${element.name}</div>
+        //                 <div class="pin-image-points"><b class="point-value">${element.points}</b> <b class="points-text">points</b></div>
+        //                 <div class="pin-image-amount">x${element.total}</div>
+        //             </div>
+        //         </div>
+        //     `
+        // });
+        // document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
     });
 }
 
-function getCombo() {
-    fetch("https://docs.google.com/spreadsheets/d/1WFu4TilKMHZXACtd5y6r4t6UoLZjS5z-IosFqgqO2gA/export?exportFormat=csv&gid=304234329#gid=304234329") //gid=516779236#gid=516779236
+function displayTotalPlayers(data) {
+    let splitByLine = data.split("\n");
+    splitByLine.shift();
+
+    let vals = splitByLine[0].split(",")
+
+    let total = vals[0]
+    let found = vals[1]
+    let left = vals[2]
+    let players = vals[3]
+
+    document.getElementById(PLAYER_COUNT_DIV).innerText = players
+
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+    console.log("Loaded");
+    fetch(STATS_URL)
         .then(dd => {
             return dd.text()
         })
         .then(ff => {
-            console.log(ff)
-            displayScores(ff)
+            displayTotalPlayers(ff)
         }).catch(err => {
 
         })
-}
-
-
-document.addEventListener('DOMContentLoaded', function (event) {
-    console.log("Loaded");
     displayAvailablePins();
 })
