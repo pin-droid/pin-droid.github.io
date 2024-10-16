@@ -298,6 +298,22 @@ body.pin-droid {
     /* min-height: 10%; */
 }
 
+#gallery{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.gallery-image{
+    border: 4px solid white;
+    border-radius: 5px;
+    width: 20%;
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
