@@ -1,6 +1,7 @@
 const AVAILABLE_PINS_DIV = "available-pins";
 
 const PLAYER_COUNT_DIV = "player-count"
+const PIN_SHARE_SCORE_DIV = "give-points-amount"
 const STATS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1572919526#gid=1572919526"
 const PIN_POINTS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1871628007#gid=1871628007"
 
@@ -12,7 +13,7 @@ function displayAvailablePins() {
             })
             .then(d => {
                 let splitByLine = d.split("\n");
-                let oo = splitByLine.map(a => ({ "id": a.split(",")[0], "value": a.split(",")[1].replace("\r","") }))
+                let oo = splitByLine.map(a => ({ "id": a.split(",")[0], "value": a.split(",")[1].replace("\r", "") }))
                 return oo
             })
             .then(pinvalues => {
@@ -36,21 +37,6 @@ function displayAvailablePins() {
 
 
             })
-        // let out = "";
-        // data.forEach(element => {
-        //     console.log(element);
-        //     out += `
-        //         <div class="pin-image-container">
-        //             <img class="pin-image" src="/media/droidcon-place-pins/${element.img}.png"/>
-        //             <div class="pin-image-text-container">
-        //                 <div class="pin-image-title">${element.name}</div>
-        //                 <div class="pin-image-points"><b class="point-value">${element.points}</b> <b class="points-text">points</b></div>
-        //                 <div class="pin-image-amount">x${element.total}</div>
-        //             </div>
-        //         </div>
-        //     `
-        // });
-        // document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
     });
 }
 
@@ -64,8 +50,10 @@ function displayTotalPlayers(data) {
     let found = vals[1]
     let left = vals[2]
     let players = vals[3]
+    let sharescore = vals[4]
 
     document.getElementById(PLAYER_COUNT_DIV).innerText = players
+    document.getElementById(PIN_SHARE_SCORE_DIV).innerText = sharescore
 
 }
 

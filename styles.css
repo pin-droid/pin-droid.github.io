@@ -135,6 +135,13 @@ body.pin-droid {
     font-size: 120%;
 }
 
+#give-points-amount{
+    background: black;
+    padding: 0 0.25em;
+    border-radius: 10px;
+    font-size: 180%;
+}
+
 .leader-board-entry-score {
     background: var(--main-green);
     color: white;
@@ -271,6 +278,11 @@ body.pin-droid {
     border-radius: 5px;
     width: 50%;
     margin-bottom: 2em;
+}
+
+.example-image-icon {
+    border-radius: 5px;
+    width: 25%;
 }
 
 .pin-container {
