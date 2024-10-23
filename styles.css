@@ -803,3 +803,19 @@ a {
         font-size: 80%;
     }
 }
+
+#page-footer{
+    margin-bottom: 0.5em;
+    font-weight: 100;
+    font-style: italic;
+    width: 100%;
+    color: white;
+    background: black;
+    opacity: 0.5;
+    padding: 10px 0px;
+}
+
+#page-footer a {
+    font-size: 100%;
+    color: rgba(0, 81, 255, 0.783);
+}
