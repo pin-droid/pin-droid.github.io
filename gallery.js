@@ -17,15 +17,17 @@ function getImages() {
         })
 }
 
-function displayImages(data){
-    let splitByLine = data.split("\n").map(a => a.replace("\r",""));
+function displayImages(data) {
+    let splitByLine = data.split("\n").map(a => a.replace("\r", ""));
     splitByLine.forEach(imageUrl => {
-        let fileId = imageUrl.split("=")[1]
-        document.getElementById(IMAGE_DIV).innerHTML += `
-            <img class="gallery-image" src="https://drive.google.com/thumbnail?id=${fileId}"/>
-        `
+        if (imageUrl != undefined && imageUrl != null && imageUrl != "" && imageUrl.length > 1) {
+            let fileId = imageUrl.split("=")[1]
+            document.getElementById(IMAGE_DIV).innerHTML += `
+                <img class="gallery-image" src="https://drive.google.com/thumbnail?id=${fileId}"/>
+            `
+        }
     });
-    
+
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
