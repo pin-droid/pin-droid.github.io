@@ -13,7 +13,7 @@ function displayAvailablePins() {
             })
             .then(d => {
                 let splitByLine = d.split("\n");
-                let oo = splitByLine.map(a => ({ "id": a.split(",")[0], "value": a.split(",")[1].replace("\r", "") }))
+                let oo = splitByLine.map(a => ({ "id": a.split(",")[0], "value": a.split(",")[1].replace("\r", ""),"total": a.split(",")[2].replace("\r", "") }))
                 return oo
             })
             .then(pinvalues => {
@@ -26,7 +26,7 @@ function displayAvailablePins() {
                             <div class="pin-image-text-container">
                                 <div class="pin-image-title">${element.name}</div>
                                 <div class="pin-image-points"><b class="point-value">${pinvalues[element.id - 1].value}</b> <b class="points-text">points</b></div>
-                                <div class="pin-image-amount">x${element.total}</div>
+                                <div class="pin-image-amount">x${pinvalues[element.id - 1].total}</div>
                             </div>
                         </div>
                     `
