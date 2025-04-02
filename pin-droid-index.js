@@ -16,9 +16,50 @@ function loadCurrentPinDroidComp() {
                 displayTotalPlayers(d)
             })
         displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
+        displayPrizes(data.current.mediaFolder, data.current.prizes)
 
         //publicUrl 
     })
+}
+
+function displayPrizes(mediaFolder, prizesArr){
+    let sorted = prizesArr.sort((a,b) => {
+        return a.rank - b.rank
+    })
+    console.log(sorted);
+    let out = ""
+    let scaleAmount = 250
+    sorted.forEach(prize => {
+        out += `
+            <div class="prize-item">
+                <img class="prize-item-img" src="${mediaFolder}/${prize.img}"/>
+                <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
+            </div>
+        ` 
+        scaleAmount = scaleAmount - 50
+    });
+
+    document.getElementById("prizes").innerHTML = out;
+    
+/*
+        "prizes": [
+            {
+                "rank": 1,
+                "link": "",
+                "img": "prizes/first.jpg"
+            },
+            {
+                "rank": 2,
+                "link": "",
+                "img": "prizes/second.jpg"
+            },
+            {
+                "rank": 3,
+                "link": "",
+                "img": "prizes/third.jpg"
+            }
+        ]
+*/
 }
 
 function fileExists(fileUrl) {

@@ -6,6 +6,7 @@
     --border-green: #00a14e;
     --darker-green: #026a34;
     --points-yellow: #dfb756;
+    --dot-green: #308e52;
     --darker-yellow: #e58d49;
     --much-darker-yellow: #c3783f;
     --red: #e5543b;
@@ -517,6 +518,11 @@ h1 {
     font-size: 250%;
 }
 
+.h1-title{
+    display: inline-flex;
+    gap: 0.5em;
+}
+
 p {
     margin: 0.3em 1em;
     /* color: rgba(256, 256, 256, 0.7); */
@@ -832,4 +838,37 @@ a {
 #page-footer a {
     font-size: 100%;
     color: rgba(0, 81, 255, 0.783);
+}
+
+#prizes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.prize-item{
+
+    position: relative;
+}
+.prize-item-img{
+    height: 15em;
+    border-radius: 3em;
+    border: solid 4px var(--dot-green);
+}
+.prize-box{
+    border-color: var(--dot-green);
+    background-color: var(--darker-green);
+}
+
+.prize-rank{
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    font-size: 250%;
+    transform: translateX(-50%);
+    background: yellow;
+    padding: 0.3em 0.5em;
+    border-radius: 1em;
+    border: 5px solid;
 }

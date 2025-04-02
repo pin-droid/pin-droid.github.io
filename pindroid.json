@@ -4,14 +4,33 @@
         "year": "2025",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
         "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfYeC3WwsArZ0AeCVK9FU1OKMCFH9aFLlCfi7xfXaDry6Hagg/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl":"https://docs.google.com/spreadsheets/d/14CDiDNarGLZh5P-SGKU8ansbLgl1puV5v-YieRZAR5U",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/14CDiDNarGLZh5P-SGKU8ansbLgl1puV5v-YieRZAR5U",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "scoresBit": "gid=0#gid=0",
         "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeScq9vymMz6WlOIpwW-mfIlgnHzQAjUwdnvibxLPG375xXxw/viewform?usp=dialog",
-        "prizes": ""
+        "prizes": [
+            {
+                "rank": 1,
+                "rankText": "1st",
+                "link": "",
+                "img": "prizes/first.jpg"
+            },
+            {
+                "rank": 2,
+                "rankText": "2nd",
+                "link": "",
+                "img": "prizes/second.jpg"
+            },
+            {
+                "rank": 3,
+                "rankText": "3rd",
+                "link": "",
+                "img": "prizes/third.jpg"
+            }
+        ]
     },
     "past": [
         {
