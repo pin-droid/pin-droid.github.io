@@ -5,12 +5,15 @@ const PINS_TOTAL_DIV = "pins-total-count"
 const PINS_FOUND_DIV = "pins-found-count"
 const PINS_LEFT_DIV = "pins-left-count"
 
-//Publically viewable sheets - data underlying it is not public
-const STATS_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=1572919526#gid=1572919526"
-const SCORES_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=0#gid=0"
+function loadCurrentPinDroidComp() {
+    $.getJSON('./pindroid.json', function (data) {
+        getCombo(data.current.publicUrl, data.current.statsBit, data.current.scoresBit)
+    })
+}
 
-function getCombo() {
-    fetch(STATS_URL)
+
+function getCombo(publicUrl, statsBit, scoresBit) {
+    fetch(`${publicUrl}/export?exportFormat=csv&${statsBit}`)
         .then(dd => {
             return dd.text()
         })
@@ -19,7 +22,7 @@ function getCombo() {
         }).catch(err => {
 
         })
-    fetch(SCORES_URL)
+        fetch(`${publicUrl}/export?exportFormat=csv&${scoresBit}`)
         .then(dd => {
             return dd.text()
         })
@@ -137,5 +140,5 @@ function displayScores(scoreData) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
-    getCombo();
+    loadCurrentPinDroidComp()
 })

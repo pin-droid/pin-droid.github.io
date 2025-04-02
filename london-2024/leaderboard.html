@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin-Droid</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="media/pin-droid-ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="media/pin-droid-ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/pin-droid-ico/favicon-16x16.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="pin-droid-leader-board.js"></script>
+</head>
+
+<body class="pin-droid">
+    <div id="overall" class="background-overlay">
+        <div class="card-container">
+            <img src="media/images-general/pindroid-logo.png" alt="" style="width: 14em;" onclick="location.href = '/'">
+            <h1>Current Scores!</h1>
+            <p>ties breakers are...</p>
+            <div class="card pin-stats-card" style="min-width: 90%;">
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Total Pins:</div>
+                    <div class="pin-stats-value" id="pins-total-count">0</div>
+                </div>
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Pins Found:</div>
+                    <div class="pin-stats-value" id="pins-found-count">0</div>
+                </div>
+                <div class="top-pin-stats-entry">
+                    <div class="pin-stats-title">Pins Left:</div>
+                    <div class="pin-stats-value" id="pins-left-count">0</div>
+                </div>
+            </div>
+            <div class="card score-card" style="min-width: 90%;">
+                <div id="loader" class="loader"></div>
+                <div id="leader-board-data" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

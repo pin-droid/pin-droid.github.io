@@ -3,10 +3,17 @@
 //Publically viewable sheets - data underlying it is not public
 const IMAGE_DIV = "gallery"
 
-const IMAGES_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=774482806#gid=774482806"
+// const IMAGES_URL = "https://docs.google.com/spreadsheets/d/1G7XmFZlmwBo1gqO_tqBMSa-ZMFzXbVD2tn7X4yAQdD4/export?exportFormat=csv&gid=774482806#gid=774482806"
 
-function getImages() {
-    fetch(IMAGES_URL)
+function loadCurrentPinDroidComp() {
+    $.getJSON('./pindroid.json', function (data) {
+        getImages(data.current.publicUrl, data.current.galleryBit)
+    })
+}
+
+
+function getImages(publicUrl, galleryBit) {
+    fetch(`${publicUrl}/export?exportFormat=csv&${galleryBit}`)
         .then(dd => {
             return dd.text()
         })
@@ -32,5 +39,6 @@ function displayImages(data) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
-    getImages();
+    // getImages();
+    loadCurrentPinDroidComp();
 })
