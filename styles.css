@@ -845,6 +845,8 @@ a {
     justify-content: center;
     align-items: center;
     gap: 0.5em;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .prize-item{
@@ -871,4 +873,9 @@ a {
     padding: 0.3em 0.5em;
     border-radius: 1em;
     border: 5px solid;
+}
+
+h3{
+    margin-top: 0 !important;
+    font-size: 75%;
 }
