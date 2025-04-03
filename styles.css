@@ -375,13 +375,35 @@ body.pin-droid {
 }
 
 .gallery-image-round {
-    border: 0.1em solid black;
+    /* border: 0.1em solid black;
     border-radius: 50%;
-    width: 10%;
+    width: 10%; */
+    width: 100%;
+    border-radius: 50%;
+    border: 0.1em solid black;
+
+}
+
+.still-there-container{
+    width: 15%;
+    position: relative;
 }
 
 .pin-still-out-there{
 
+}
+
+.still-there-id{
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25em 0.5em;
+    background: grey;
+    border-radius: 0.5em;
+    font-size: 90%;
+    border: 1px solid white;
+    color: black;
 }
 
 .pin-gone{
@@ -804,6 +826,21 @@ a {
     }
 }
 
+@media screen and (max-width: 650px) {
+    .still-there-id{
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.25em 0.5em;
+        background: grey;
+        border-radius: 0.5em;
+        font-size: 60%;
+        border: 1px solid white;
+        color: black;
+    }
+}
+
 /* Phone */
 @media screen and (max-width: 500px) {
     .example-image {
@@ -822,6 +859,7 @@ a {
     .pin-image-text-container {
         font-size: 80%;
     }
+
 }
 
 #page-footer{

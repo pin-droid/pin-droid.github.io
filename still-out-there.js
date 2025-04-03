@@ -48,8 +48,11 @@ function showEm(data, mediaFolder) {
                 pinAvailClass = "pin-gone" 
             }
             document.getElementById("gallery").innerHTML += `
-            <img class="gallery-image-round ${pinAvailClass}" src="${mediaFolder}/${justImg}.png"/>
-        `
+            <div class="still-there-container">
+                <img class="gallery-image-round ${pinAvailClass}" src="${mediaFolder}/${justImg}.png"/>
+                <div class="still-there-id">${bits[2]}</div>
+            </div>
+            `
 
         }
     });
