@@ -375,7 +375,7 @@ body.pin-droid {
 }
 
 .gallery-image-round {
-    border: 0.3em solid black;
+    border: 0.1em solid black;
     border-radius: 50%;
     width: 10%;
 }
@@ -878,4 +878,8 @@ a {
 h3{
     margin-top: 0 !important;
     font-size: 75%;
+}
+
+.mini-icon{
+    width: 2em;
 }
