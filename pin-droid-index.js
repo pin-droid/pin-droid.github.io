@@ -28,18 +28,41 @@ function displayPrizes(mediaFolder, prizesArr){
     })
     console.log(sorted);
     let out = ""
+    let outOther = ""
     let scaleAmount = 250
-    sorted.forEach(prize => {
+    let showers = sorted.filter(e => e.individual == true)
+    let other = sorted.filter(e => e.individual == false)
+    showers.forEach(prize => {
+        let med = ""
+        if(prize.medalimg != null){
+            med = `<img class="prize-item-img-medal" src="/media/images-general/${prize.medalimg}"/>`
+        }
+                // <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
         out += `
             <div class="prize-item">
                 <img class="prize-item-img" src="${mediaFolder}/${prize.img}"/>
-                <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
+                ${med}                
+            </div>
+        ` 
+        scaleAmount = scaleAmount - 50
+    });
+    other.forEach(prize => {
+        let med = ""
+        if(prize.medalimg != null){
+            med = `<img class="prize-item-img-medal" src="/media/images-general/${prize.medalimg}"/>`
+        }
+        outOther += `
+            <div class="prize-item">
+                <img class="prize-item-img-other" src="${mediaFolder}/${prize.img}"/>
+                <div class="prize-rank-other" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
+                ${med}                
             </div>
         ` 
         scaleAmount = scaleAmount - 50
     });
 
     document.getElementById("prizes").innerHTML = out;
+    document.getElementById("prizes-other").innerHTML = outOther;
     
 /*
         "prizes": [

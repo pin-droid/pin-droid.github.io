@@ -14,21 +14,35 @@
         "prizes": [
             {
                 "rank": 1,
+                "individual": true,
                 "rankText": "1st",
                 "link": "",
-                "img": "prizes/first.jpg"
+                "img": "prizes/first.jpg",
+                "medalimg": "1st.png"
             },
             {
                 "rank": 2,
+                "individual": true,
                 "rankText": "2nd",
                 "link": "",
-                "img": "prizes/second.jpg"
+                "img": "prizes/second.jpg",
+                "medalimg": "2nd.png"
             },
             {
                 "rank": 3,
+                "individual": true,
                 "rankText": "3rd",
                 "link": "",
-                "img": "prizes/third.jpg"
+                "img": "prizes/third.jpg",
+                "medalimg": "3rd.png"
+            },
+            {
+                "rank": 4,
+                "individual": false,
+                "rankText": "4th to 10th (Inclusive)",
+                "link": "",
+                "img": "prizes/kendroid.png",
+                "medalimg": null
             }
         ]
     },

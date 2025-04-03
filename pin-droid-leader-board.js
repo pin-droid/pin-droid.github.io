@@ -55,87 +55,96 @@ function displayScores(scoreData) {
     console.log(splitByLine);
     splitByLine.shift();
     console.log(splitByLine);
-    let objs = []
-    let out = ""
-    splitByLine.forEach(element => {
-        let elements = element.split(",");
-        let name = elements[0];
-        let score = elements[1];
-        let pinsFound = elements[2];
-        let pinsGiven = elements[3];
-        let pinsReceived = elements[4];
-        console.log(name);
-        console.log(score);
-        console.log(pinsFound);
-        console.log(pinsGiven);
-        console.log(pinsReceived);
-        objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived })
-    });
-    objs.sort((a, b) => a.score - b.score).reverse();
-
-    objs.forEach((obj, idx) => {
-        let classPosition = ""
-        let position = `<div class="leader-board-entry-rank">${idx + 1}</div>`
-        if (idx == 0) {
-            position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/1st.png" class="rank-icon-image"/></div>`
-            classPosition = "first"
-        } else if (idx == 1) {
-            position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/2nd.png" class="rank-icon-image"/></div>`
-            classPosition = "second"
-
-        } else if (idx == 2) {
-            position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/3rd.png" class="rank-icon-image"/></div>`
-            classPosition = "third"
-        }
-        let pinStats = `
-            <div class="pins-event-div" title="Number of pins found">
-                <div class="pins-event-icon">
-                    <img class="pins-event-icon-image" src="media/images-general/found.png" />
+    if(splitByLine.length > 0){
+        console.log("SHowing results!")
+        let objs = []
+        let out = ""
+        splitByLine.forEach(element => {
+            let elements = element.split(",");
+            let name = elements[0];
+            let score = elements[1];
+            let pinsFound = elements[2];
+            let pinsGiven = elements[3];
+            let pinsReceived = elements[4];
+            console.log(name);
+            console.log(score);
+            console.log(pinsFound);
+            console.log(pinsGiven);
+            console.log(pinsReceived);
+            objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived })
+        });
+        objs.sort((a, b) => a.score - b.score).reverse();
+    
+        objs.forEach((obj, idx) => {
+            let classPosition = ""
+            let position = `<div class="leader-board-entry-rank">${idx + 1}</div>`
+            if (idx == 0) {
+                position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/1st.png" class="rank-icon-image"/></div>`
+                classPosition = "first"
+            } else if (idx == 1) {
+                position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/2nd.png" class="rank-icon-image"/></div>`
+                classPosition = "second"
+    
+            } else if (idx == 2) {
+                position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/3rd.png" class="rank-icon-image"/></div>`
+                classPosition = "third"
+            }
+            let pinStats = `
+                <div class="pins-event-div" title="Number of pins found">
+                    <div class="pins-event-icon">
+                        <img class="pins-event-icon-image" src="media/images-general/found.png" />
+                    </div>
+                    <div class="pins-event-value">
+                        ${obj.pinsFound}
+                    </div>
+    
                 </div>
-                <div class="pins-event-value">
-                    ${obj.pinsFound}
+                <div class="pins-event-div" title="Number of pins given away (extra points)">
+                    <div class="pins-event-icon">
+                        <img class="pins-event-icon-image" src="media/images-general/given.png" />
+                    </div>
+                    <div class="pins-event-value">
+                        ${obj.pinsGiven}
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="pins-event-div" title="Number of pins given away (extra points)">
-                <div class="pins-event-icon">
-                    <img class="pins-event-icon-image" src="media/images-general/given.png" />
+                <div class="pins-event-div" title="Number of pins received as gift">
+                    <div class="pins-event-icon">
+                        <img class="pins-event-icon-image" src="media/images-general/received.png" />
+                    </div>
+                    <div class="pins-event-value">
+                        ${obj.pinsReceived}
+                    </div>
+    
                 </div>
-                <div class="pins-event-value">
-                    ${obj.pinsGiven}
+    
+            `
+            out += `
+                <div class="leader-board-entry-space">
+                <div class="leader-board-entry ${classPosition}">
+                    <div class="leader-board-entry-left">
+                        ${position}
+                        <div class="leader-board-entry-name">${obj.name}</div>
+                    </div>
+    
+                    <div class="leader-board-entry-score ${obj.score == 0 ? "zero" : ""}">${obj.score}</div>
                 </div>
-
-            </div>
-            <div class="pins-event-div" title="Number of pins received as gift">
-                <div class="pins-event-icon">
-                    <img class="pins-event-icon-image" src="media/images-general/received.png" />
+                                <div class="leader-board-entry-pin-stats">
+                        ${pinStats}
+                    </div>
                 </div>
-                <div class="pins-event-value">
-                    ${obj.pinsReceived}
-                </div>
-
-            </div>
-
-        `
-        out += `
-            <div class="leader-board-entry-space">
-            <div class="leader-board-entry ${classPosition}">
-                <div class="leader-board-entry-left">
-                    ${position}
-                    <div class="leader-board-entry-name">${obj.name}</div>
-                </div>
-
-                <div class="leader-board-entry-score ${obj.score == 0 ? "zero" : ""}">${obj.score}</div>
-            </div>
-                            <div class="leader-board-entry-pin-stats">
-                    ${pinStats}
-                </div>
-            </div>
-        `
-    });
-    document.getElementById("loader").style.display = "none";
-    document.getElementById(LEADER_BOARD_DIV).style.display = "flex";
-    document.getElementById(LEADER_BOARD_DIV).innerHTML = out
+            `
+        });
+        document.getElementById("loader").style.display = "none";
+        document.getElementById(LEADER_BOARD_DIV).style.display = "flex";
+        document.getElementById(LEADER_BOARD_DIV).innerHTML = out
+    }else{
+        console.log("Not showing results!")
+        document.getElementById("loader").style.display = "none";
+        document.getElementById(LEADER_BOARD_DIV).style.display = "flex";
+        document.getElementById(LEADER_BOARD_DIV).innerHTML = `<div style="    font-size: 150%;">Results Hidden for now!</div>`
+    }
+    
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {

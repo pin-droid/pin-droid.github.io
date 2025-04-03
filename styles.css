@@ -896,14 +896,21 @@ a {
     border-radius: 3em;
     border: solid 4px var(--dot-green);
 }
+.prize-item-img-other{
+    height: 6em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    /* border: solid 4px var(--dot-green);*/
+}
 .prize-box{
     border-color: var(--dot-green);
     background-color: var(--darker-green);
 }
 
+
 .prize-rank{
     position: absolute;
-    bottom: -0.5em;
+    bottom: 0.25em;
     left: 50%;
     font-size: 250%;
     transform: translateX(-50%);
@@ -913,6 +920,15 @@ a {
     border: 5px solid;
 }
 
+.prize-item-img-medal{
+    position: absolute;
+    width: 40%;
+    top: 0;
+    left: 0;
+    -webkit-filter: drop-shadow(0px 0px 6px #000);
+    filter: drop-shadow(0px 0px 6px #000);
+}
+
 h3{
     margin-top: 0 !important;
     font-size: 75%;
@@ -920,4 +936,18 @@ h3{
 
 .mini-icon{
     width: 2em;
+}
+
+
+.prize-rank-other{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 250%;
+    transform: translateX(-50%);
+    /* background: yellow; */
+    padding: 0.3em 0.5em;
+    /* border-radius: 1em; */
+    /* border: 5px solid; */
+    color: rgba(255, 255, 255, 0.5);
 }
