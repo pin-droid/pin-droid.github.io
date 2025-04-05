@@ -103,7 +103,7 @@ body.pin-droid {
     background: white;
     padding: 1em;
     /* margin: 0.5em; */
-    margin: 1em;
+    margin: 0.5em;
     border-radius: 10px;
     border: 0.25em solid var(--darker-green);
     /* border: 0.25em solid var(--border-green); */
@@ -168,6 +168,44 @@ body.pin-droid {
     initial-value: -45deg;
 }
 
+@property --colorOneHow {
+    syntax: '<color>';
+    inherits: false;
+    /* initial-value: #dac616; */
+    /* initial-value: #dfb756; */
+    initial-value: #9d1525;
+}
+/* --crown-yellow: #dfb756;
+--crown-orange: #e58d49;
+--crown-red: #e5543b; */
+
+@property --colorTwoHow {
+    syntax: '<color>';
+    inherits: false;
+    /* initial-value: #ffffff; */
+    /* initial-value: #e58d49; */
+    initial-value: #bb2032;
+}
+
+@property --colorOneInterest {
+    syntax: '<color>';
+    inherits: false;
+    /* initial-value: #dac616; */
+    /* initial-value: #dfb756; */
+    initial-value: #29499a;
+}
+/* --crown-yellow: #dfb756;
+--crown-orange: #e58d49;
+--crown-red: #e5543b; */
+
+@property --colorTwoInterest {
+    syntax: '<color>';
+    inherits: false;
+    /* initial-value: #ffffff; */
+    /* initial-value: #e58d49; */
+    initial-value: #3c7cd0;
+}
+
 @property --colorOne {
     syntax: '<color>';
     inherits: false;
@@ -222,6 +260,43 @@ body.pin-droid {
     inherits: false;
     initial-value: #dac616;
 } */
+
+.how {
+    /* background: repeating-linear-gradient(var(--angle), var(--colorTwo), var(--colorOne), var(--colorThree), var(--colorOne), var(--colorTwo)); */
+    /* background: repeating-linear-gradient(var(--angle), var(--colorOne), var(--colorTwo), var(--colorThree), var(--colorTwo), var(--colorOne)); */
+    /* background: linear-gradient(var(--angle), var(--colorOne) var(--per), var(--colorTwo)); */
+    background: linear-gradient(var(--angle), var(--colorOneHow) 40%, var(--colorTwoHow) 50%, var(--colorOneHow) 60%);
+    /* background: repeating-linear-gradient(var(--angle), var(--colorOne) var(--per), var(--colorTwo), var(--colorOne)); */
+    /* background: repeating-linear-gradient(var(--angle), yellow, white, yellow); */
+    background-size: 300%;
+    background-position-x: 100%;
+    /* animation: shimmer 1s ease infinite alternate; */
+    animation: shimmer 4s linear infinite ;
+    /* animation: shimmer 3s ease infinite alternate; */
+}
+
+.interest {
+    /* background: repeating-linear-gradient(var(--angle), var(--colorTwo), var(--colorOne), var(--colorThree), var(--colorOne), var(--colorTwo)); */
+    /* background: repeating-linear-gradient(var(--angle), var(--colorOne), var(--colorTwo), var(--colorThree), var(--colorTwo), var(--colorOne)); */
+    /* background: linear-gradient(var(--angle), var(--colorOne) var(--per), var(--colorTwo)); */
+    background: linear-gradient(var(--angle), var(--colorOneInterest) 40%, var(--colorTwoInterest) 50%, var(--colorOneInterest) 60%);
+    /* background: repeating-linear-gradient(var(--angle), var(--colorOne) var(--per), var(--colorTwo), var(--colorOne)); */
+    /* background: repeating-linear-gradient(var(--angle), yellow, white, yellow); */
+    background-size: 300%;
+    background-position-x: 100%;
+    /* animation: shimmer 1s ease infinite alternate; */
+    animation: shimmer 4s linear infinite ;
+    /* animation: shimmer 3s ease infinite alternate; */
+}
+
+.how a {
+
+    color: white;
+}
+
+.interest a{
+    color: white;
+}
 
 .first {
     /* background: repeating-linear-gradient(var(--angle), var(--colorTwo), var(--colorOne), var(--colorThree), var(--colorOne), var(--colorTwo)); */
@@ -950,4 +1025,43 @@ h3{
     /* border-radius: 1em; */
     /* border: 5px solid; */
     color: rgba(255, 255, 255, 0.5);
+}
+
+
+.tie-break-header{
+
+    display: inline-block;
+}
+
+#exp-col-text{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 150%;
+    color: #0000ff;
+    animation: jiggle 1s infinite alternate linear;
+}
+
+#tie-details{
+    background: white;
+    color: black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    font-family: monospace;
+    width: 100%;
+    padding: 0.5em 0px;
+}
+
+#tie-details p{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+@keyframes jiggle {
+    from {
+        transform: rotateZ(2deg);
+    }   
+    to {
+
+        transform: rotateZ(-2deg);
+    } 
 }

@@ -147,7 +147,26 @@ function displayScores(scoreData) {
     
 }
 
+function redrawTieBlocks(){
+    if(expanded == true){
+        document.getElementById("tie-details").style.display = "block";
+        document.getElementById("exp-col-text").innerText = "COLLAPSE"
+    }else{
+        document.getElementById("tie-details").style.display = "none";
+        document.getElementById("exp-col-text").innerText = "EXPAND"
+    }
+}
+
+let expanded = false;
+
+function toggleExpandCollapse(){
+    console.log("TOGGLE");
+    expanded = !expanded    
+    redrawTieBlocks()
+}
+
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
     loadCurrentPinDroidComp()
+    redrawTieBlocks()
 })
