@@ -31,34 +31,42 @@ function getCombo(publicUrl, pinsBit, statsBit, scoresBit, mediaFolder) {
             return oo
         })
         .then(ff => {
-            storedPinsData = ff 
+            storedPinsData = ff
+            fetch(`${publicUrl}/export?exportFormat=csv&${statsBit}`)
+                .then(dd => {
+                    return dd.text()
+                })
+                .then(ff => {
+                    displayOverallStats(ff)
+                }).catch(err => {
+                    console.log("ERROR 2");
+                    console.log(err);
+
+                })
+            fetch(`${publicUrl}/export?exportFormat=csv&${scoresBit}`)
+                .then(dd => {
+                    return dd.text()
+                })
+                .then(ff => {
+                    displayScores(ff, mediaFolder)
+                }).catch(err => {
+                    console.log("ERROR 3");
+                    console.log(err);
+
+                })
         }).catch(err => {
+            console.log("ERROR 1 ");
+            console.log(err);
+
 
         })
-    fetch(`${publicUrl}/export?exportFormat=csv&${statsBit}`)
-        .then(dd => {
-            return dd.text()
-        })
-        .then(ff => {
-            displayOverallStats(ff)
-        }).catch(err => {
 
-        })
-    fetch(`${publicUrl}/export?exportFormat=csv&${scoresBit}`)
-        .then(dd => {
-            return dd.text()
-        })
-        .then(ff => {
-            displayScores(ff,mediaFolder)
-        }).catch(err => {
-
-        })
 }
 
 function displayOverallStats(statsData) {
     console.log("overall stats");
     console.log(statsData);
-    
+
     let splitByLine = statsData.split("\n");
     splitByLine.shift();
 
@@ -82,15 +90,17 @@ function displayOverallStats(statsData) {
 }
 
 function displayScores(scoreData, mediaFolder) {
-    let splitByLine = scoreData.split("\n");
+    let splitByLine = scoreData.split("\n").map(a => a.replace("\r", ""));
+    console.log("----------------");
+
     console.log(splitByLine);
     splitByLine.shift();
     console.log(splitByLine);
-    if(splitByLine.length > 0){
+    if (splitByLine.length > 0) {
         console.log("SHowing results!")
         let objs = []
         let out = ""
-        let collection = "<div class='leader-board-entry-collection'>"
+        // let collection = "<div class='leader-board-entry-collection'>"
         splitByLine.forEach(element => {
             let elements = element.split(",");
             let name = elements[0];
@@ -105,10 +115,10 @@ function displayScores(scoreData, mediaFolder) {
             console.log(pinsGiven);
             console.log(pinsReceived);
             console.log(collectionIds);
-            objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived, "collection": collectionIds})
+            objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived, "collection": collectionIds })
         });
         objs.sort((a, b) => a.score - b.score).reverse();
-    
+
         objs.forEach((obj, idx) => {
             let classPosition = ""
             let position = `<div class="leader-board-entry-rank">${idx + 1}</div>`
@@ -118,7 +128,7 @@ function displayScores(scoreData, mediaFolder) {
             } else if (idx == 1) {
                 position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/2nd.png" class="rank-icon-image"/></div>`
                 classPosition = "second"
-    
+
             } else if (idx == 2) {
                 position = `<div class="leader-board-entry-rank-icon"><img src="media/images-general/3rd.png" class="rank-icon-image"/></div>`
                 classPosition = "third"
@@ -155,13 +165,13 @@ function displayScores(scoreData, mediaFolder) {
             `
             let playerCollection = obj.collection.split("-")
             console.log(playerCollection);
-            
+            let collection = "<div class='leader-board-entry-collection'>"
             storedPinsData.forEach(pin => {
                 let foundClass = "not-found";
-                if(playerCollection.includes(pin.id)) {
+                if (playerCollection.includes(pin.id)) {
                     foundClass = "found"
                 }
-                collection += `<img class="tiny-image ${foundClass}" src="${mediaFolder}/${pin.name}.png"/>` 
+                collection += `<img class="tiny-image ${foundClass}" src="${mediaFolder}/${pin.name}.png"/>`
             });
             collection += "</div>";
             out += `
@@ -185,20 +195,20 @@ function displayScores(scoreData, mediaFolder) {
         document.getElementById("loader").style.display = "none";
         document.getElementById(LEADER_BOARD_DIV).style.display = "flex";
         document.getElementById(LEADER_BOARD_DIV).innerHTML = out
-    }else{
+    } else {
         console.log("Not showing results!")
         document.getElementById("loader").style.display = "none";
         document.getElementById(LEADER_BOARD_DIV).style.display = "flex";
         document.getElementById(LEADER_BOARD_DIV).innerHTML = `<div style="    font-size: 150%;">Results Hidden for now!</div>`
     }
-    
+
 }
 
-function redrawTieBlocks(){
-    if(expanded == true){
+function redrawTieBlocks() {
+    if (expanded == true) {
         document.getElementById("tie-details").style.display = "block";
         document.getElementById("exp-col-text").innerText = "COLLAPSE"
-    }else{
+    } else {
         document.getElementById("tie-details").style.display = "none";
         document.getElementById("exp-col-text").innerText = "EXPAND"
     }
@@ -206,9 +216,9 @@ function redrawTieBlocks(){
 
 let expanded = false;
 
-function toggleExpandCollapse(){
+function toggleExpandCollapse() {
     console.log("TOGGLE");
-    expanded = !expanded    
+    expanded = !expanded
     redrawTieBlocks()
 }
 
