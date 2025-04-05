@@ -217,10 +217,11 @@ function displayTotalPlayers(data) {
     let found = vals[1]
     let left = vals[2]
     let players = vals[3]
-    let sharescore = vals[4]
+    let differentPinCount = vals[4]
+    let sharescore = vals[5]
 
     document.getElementById(PLAYER_COUNT_DIV).innerText = players
-    document.getElementById(PIN_SHARE_SCORE_DIV).innerText = sharescore
+    // document.getElementById(PIN_SHARE_SCORE_DIV).innerText = sharescore
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {

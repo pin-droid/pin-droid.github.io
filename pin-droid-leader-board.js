@@ -4,15 +4,37 @@ const LEADER_BOARD_DIV = "leader-board-data";
 const PINS_TOTAL_DIV = "pins-total-count"
 const PINS_FOUND_DIV = "pins-found-count"
 const PINS_LEFT_DIV = "pins-left-count"
+const PINS_FULL_COLLECTION_AMOUNT = "collection-points-amount" //
+const PINS_SHARE_SCORE_DIV = "given-points-amount"
+const PINS_DIFFERENT_COUNT_DIV = "different-pins-count"
 
 function loadCurrentPinDroidComp() {
     $.getJSON('./pindroid.json', function (data) {
-        getCombo(data.current.publicUrl, data.current.statsBit, data.current.scoresBit)
+        getCombo(data.current.publicUrl, data.current.pinsBit, data.current.statsBit, data.current.scoresBit, data.current.mediaFolder)
     })
 }
 
+let storedPinsData = null
 
-function getCombo(publicUrl, statsBit, scoresBit) {
+function getCombo(publicUrl, pinsBit, statsBit, scoresBit, mediaFolder) {
+    fetch(`${publicUrl}/export?exportFormat=csv&${pinsBit}`)
+        .then(dd => {
+            return dd.text()
+        })
+        .then(d => {
+            console.log("PINNSS");
+            console.log(d);
+
+            let splitByLine = d.split("\n");
+            let oo = splitByLine.map(a => ({ "name": a.split(",")[0], "id": a.split(",")[1].replace("\r", ""), "amount": a.split(",")[2].replace("\r", ""), "pointPerPin": a.split(",")[3].replace("\r", "") }))
+            let dump = oo.shift() //drops first line which is colmun headers
+            return oo
+        })
+        .then(ff => {
+            storedPinsData = ff 
+        }).catch(err => {
+
+        })
     fetch(`${publicUrl}/export?exportFormat=csv&${statsBit}`)
         .then(dd => {
             return dd.text()
@@ -22,12 +44,12 @@ function getCombo(publicUrl, statsBit, scoresBit) {
         }).catch(err => {
 
         })
-        fetch(`${publicUrl}/export?exportFormat=csv&${scoresBit}`)
+    fetch(`${publicUrl}/export?exportFormat=csv&${scoresBit}`)
         .then(dd => {
             return dd.text()
         })
         .then(ff => {
-            displayScores(ff)
+            displayScores(ff,mediaFolder)
         }).catch(err => {
 
         })
@@ -35,6 +57,8 @@ function getCombo(publicUrl, statsBit, scoresBit) {
 
 function displayOverallStats(statsData) {
     console.log("overall stats");
+    console.log(statsData);
+    
     let splitByLine = statsData.split("\n");
     splitByLine.shift();
 
@@ -43,14 +67,21 @@ function displayOverallStats(statsData) {
     let total = vals[0]
     let found = vals[1]
     let left = vals[2]
+    let totalPlayers = vals[3]
+    let allpins = vals[4]
+    let sharescore = vals[5]
+    let fullcollectionscore = vals[6]
 
     document.getElementById(PINS_TOTAL_DIV).innerText = total
     document.getElementById(PINS_FOUND_DIV).innerText = found
     document.getElementById(PINS_LEFT_DIV).innerText = left
+    document.getElementById(PINS_DIFFERENT_COUNT_DIV).innerText = allpins
+    document.getElementById(PINS_SHARE_SCORE_DIV).innerText = sharescore
+    document.getElementById(PINS_FULL_COLLECTION_AMOUNT).innerText = fullcollectionscore
 
 }
 
-function displayScores(scoreData) {
+function displayScores(scoreData, mediaFolder) {
     let splitByLine = scoreData.split("\n");
     console.log(splitByLine);
     splitByLine.shift();
@@ -59,6 +90,7 @@ function displayScores(scoreData) {
         console.log("SHowing results!")
         let objs = []
         let out = ""
+        let collection = "<div class='leader-board-entry-collection'>"
         splitByLine.forEach(element => {
             let elements = element.split(",");
             let name = elements[0];
@@ -66,12 +98,14 @@ function displayScores(scoreData) {
             let pinsFound = elements[2];
             let pinsGiven = elements[3];
             let pinsReceived = elements[4];
+            let collectionIds = elements[5];
             console.log(name);
             console.log(score);
             console.log(pinsFound);
             console.log(pinsGiven);
             console.log(pinsReceived);
-            objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived })
+            console.log(collectionIds);
+            objs.push({ "name": name, "score": score, "pinsFound": pinsFound, "pinsGiven": pinsGiven, "pinsReceived": pinsReceived, "collection": collectionIds})
         });
         objs.sort((a, b) => a.score - b.score).reverse();
     
@@ -119,17 +153,30 @@ function displayScores(scoreData) {
                 </div>
     
             `
+            let playerCollection = obj.collection.split("-")
+            console.log(playerCollection);
+            
+            storedPinsData.forEach(pin => {
+                let foundClass = "not-found";
+                if(playerCollection.includes(pin.id)) {
+                    foundClass = "found"
+                }
+                collection += `<img class="tiny-image ${foundClass}" src="${mediaFolder}/${pin.name}.png"/>` 
+            });
+            collection += "</div>";
             out += `
                 <div class="leader-board-entry-space">
-                <div class="leader-board-entry ${classPosition}">
-                    <div class="leader-board-entry-left">
-                        ${position}
-                        <div class="leader-board-entry-name">${obj.name}</div>
+                    <div class="leader-board-entry ${classPosition}">
+                        <div class="leader-board-entry-left">
+                            ${position}
+                            <div class="leader-board-entry-name">
+                                <div class="leader-board-entry-name-text">${obj.name}</div>
+                                ${collection}
+                            </div>
+                        </div>
+                        <div class="leader-board-entry-score ${obj.score == 0 ? "zero" : ""}">${obj.score}</div>
                     </div>
-    
-                    <div class="leader-board-entry-score ${obj.score == 0 ? "zero" : ""}">${obj.score}</div>
-                </div>
-                                <div class="leader-board-entry-pin-stats">
+                    <div class="leader-board-entry-pin-stats">
                         ${pinStats}
                     </div>
                 </div>

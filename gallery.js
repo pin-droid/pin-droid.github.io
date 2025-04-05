@@ -26,15 +26,25 @@ function getImages(publicUrl, galleryBit) {
 
 function displayImages(data) {
     let splitByLine = data.split("\n").map(a => a.replace("\r", ""));
-    splitByLine.forEach(imageUrl => {
-        if (imageUrl != undefined && imageUrl != null && imageUrl != "" && imageUrl.length > 1) {
-            let fileId = imageUrl.split("=")[1]
-            document.getElementById(IMAGE_DIV).innerHTML += `
-                <img class="gallery-image" src="https://drive.google.com/thumbnail?id=${fileId}"/>
-            `
-        }
-    });
+    splitByLine = splitByLine.filter(imageUrl => imageUrl != undefined && imageUrl != null && imageUrl != "" && imageUrl.length > 1);
 
+    if (splitByLine.length < 1) {
+        document.getElementById(IMAGE_DIV).innerHTML += `
+            <div>
+                <p>No Images Uploaded Yet!</p>
+                <p>Use the Image Uploader in the form when you acquire a new pin!</p>
+            </div>            
+        `
+    } else {
+        splitByLine.forEach(imageUrl => {
+            if (imageUrl != undefined && imageUrl != null && imageUrl != "" && imageUrl.length > 1) {
+                let fileId = imageUrl.split("=")[1]
+                document.getElementById(IMAGE_DIV).innerHTML += `
+                    <img class="gallery-image" src="https://drive.google.com/thumbnail?id=${fileId}"/>
+                `
+            }
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {

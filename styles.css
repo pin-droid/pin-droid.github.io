@@ -135,8 +135,32 @@ body.pin-droid {
     flex: 1;
 }
 
-.leader-board-entry-name {
+
+.leader-board-entry-name-text{
     font-size: 120%;
+}
+
+.leader-board-entry-name {
+    text-align: left;
+}
+
+.leader-board-entry-collection{
+    font-size: 50%;
+
+}
+
+.tiny-image{
+    width: 5em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.highlight-number{
+        background: black;
+        padding: 0 0.25em;
+        border-radius: 10px;
+        font-size: 180%;
 }
 
 #give-points-amount {
@@ -914,6 +938,14 @@ a {
         border: 1px solid white;
         color: black;
     }
+
+
+.tiny-image{
+    width: 2em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 1px solid black;
+}
 }
 
 /* Phone */
@@ -934,6 +966,14 @@ a {
     .pin-image-text-container {
         font-size: 80%;
     }
+
+
+.tiny-image{
+    width: 1em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 1px solid black;
+}
 
 }
 
@@ -1033,6 +1073,12 @@ h3{
     display: inline-block;
 }
 
+.jiggler{
+    cursor: pointer;
+    animation: jiggle 1s infinite alternate linear;
+}
+
+
 #exp-col-text{
     cursor: pointer;
     display: inline-block;
@@ -1064,4 +1110,13 @@ h3{
 
         transform: rotateZ(-2deg);
     } 
+}
+
+.found {
+
+}
+
+.not-found{
+    opacity: 0.3;
+    scale: 0.8;
 }
