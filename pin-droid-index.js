@@ -4,23 +4,45 @@ const PLAYER_COUNT_DIV = "player-count"
 const PIN_SHARE_SCORE_DIV = "give-points-amount"
 
 function loadCurrentPinDroidComp() {
-    $.ajaxSetup({
-        async: false
-    });
-    $.getJSON('./pindroid.json', function (data) {
-        console.log(data);
-        console.log(data.current);
-        document.getElementById("title-place").innerHTML = data.current.location;
-        document.getElementById("title-year").innerHTML = data.current.year;
-        document.getElementById("registration-link").href = data.current.registrationUrl;
-        getPublicStatsInfo(data.current.publicUrl, data.current.statsBit)
-            .then(d => {
-                console.log(d)
-                displayTotalPlayers(d)
-            })
-        displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
-        displayPrizes(data.current.mediaFolder, data.current.prizes)
+    // $.ajaxSetup({
+    //     async: false
+    // });
+    $.ajax({
+        url: './pindroid.json',
+        dataType: 'json',
+        async: false,
+        data: "",
+        success: function(data) {
+          console.log("D");
+          console.log(data);
+            console.log(data);
+            console.log(data.current);
+            document.getElementById("title-place").innerHTML = data.current.location;
+            document.getElementById("title-year").innerHTML = data.current.year;
+            document.getElementById("registration-link").href = data.current.registrationUrl;
+            getPublicStatsInfo(data.current.publicUrl, data.current.statsBit)
+                .then(d => {
+                    console.log(d)
+                    displayTotalPlayers(d)
+                })
+            displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
+            displayPrizes(data.current.mediaFolder, data.current.prizes)
+        }
     })
+    // $.getJSON('./pindroid.json', function (data) {
+    //     console.log(data);
+    //     console.log(data.current);
+    //     document.getElementById("title-place").innerHTML = data.current.location;
+    //     document.getElementById("title-year").innerHTML = data.current.year;
+    //     document.getElementById("registration-link").href = data.current.registrationUrl;
+    //     getPublicStatsInfo(data.current.publicUrl, data.current.statsBit)
+    //         .then(d => {
+    //             console.log(d)
+    //             displayTotalPlayers(d)
+    //         })
+    //     displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
+    //     displayPrizes(data.current.mediaFolder, data.current.prizes)
+    // })
 }
 
 function displayPrizes(mediaFolder, prizesArr){
