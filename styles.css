@@ -484,7 +484,7 @@ body.pin-droid {
 }
 
 .still-there-container{
-    width: 15%;
+    width: 10%;
     position: relative;
 }
 
@@ -939,6 +939,10 @@ a {
         color: black;
     }
 
+    .still-there-container{
+        width: 15%;
+        position: relative;
+    }
 
 
 
