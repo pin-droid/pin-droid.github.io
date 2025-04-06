@@ -940,6 +940,8 @@ a {
     }
 
 
+
+
 .tiny-image{
     width: 2em;
     margin-right: 0.5em;
@@ -958,7 +960,9 @@ a {
         text-align: center;
         width: 100%;
     }
-
+    .steps-list{
+        margin: 0em 5% !important;
+    }
     .pin-image {
         width: 8em;
     }
@@ -1119,4 +1123,73 @@ h3{
 .not-found{
     opacity: 0.3;
     scale: 0.8;
+}
+
+
+.steps-list{
+    margin: 0em 10%;
+}
+
+.step-title{
+    text-align: left;
+    background: black;
+    padding: 0.2em;
+    border-radius: 0.5em;
+}
+
+.step-split{
+    height: 1em;
+}
+
+.step-instruction{
+    margin: 0.5em 0px;
+    text-align: left;
+    padding: 0 1em;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+li a{
+    font-size: 100%;
+}
+
+li.warning {
+    color: #ff771a;
+    text-shadow: 1px 1px 2px black;
+}
+
+li i {
+    display: block;
+    opacity: 0.7;
+    font-size: 80%;
+}
+
+li span.highlight{
+    background: #0622b1;
+    color: white;
+    padding: 1px 8px;
+}
+
+li span.sidenote{
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.list-image{
+    width: 50%;
+    position: relative;
+    left: 50%;
+    margin: 0.5em 0px;
+    transform: translateX(-50%);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.list-image-noborder{
+    width: 30%;
+    position: relative;
+    left: 50%;
+    margin: 0.5em 0px;
+    transform: translateX(-50%);
 }

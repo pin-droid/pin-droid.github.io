@@ -65,7 +65,7 @@ function displayTotalPlayers(data) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
-    loadCurrentPinDroidComp();
+    // loadCurrentPinDroidComp();
     // fetch(STATS_URL)
     //     .then(dd => {
     //         return dd.text()
