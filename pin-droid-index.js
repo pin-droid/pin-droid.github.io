@@ -4,6 +4,9 @@ const PLAYER_COUNT_DIV = "player-count"
 const PIN_SHARE_SCORE_DIV = "give-points-amount"
 
 function loadCurrentPinDroidComp() {
+    $.ajaxSetup({
+        async: false
+    });
     $.getJSON('./pindroid.json', function (data) {
         console.log(data);
         console.log(data.current);
@@ -17,8 +20,6 @@ function loadCurrentPinDroidComp() {
             })
         displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
         displayPrizes(data.current.mediaFolder, data.current.prizes)
-
-        //publicUrl 
     })
 }
 
@@ -63,26 +64,6 @@ function displayPrizes(mediaFolder, prizesArr){
 
     document.getElementById("prizes").innerHTML = out;
     document.getElementById("prizes-other").innerHTML = outOther;
-    
-/*
-        "prizes": [
-            {
-                "rank": 1,
-                "link": "",
-                "img": "prizes/first.jpg"
-            },
-            {
-                "rank": 2,
-                "link": "",
-                "img": "prizes/second.jpg"
-            },
-            {
-                "rank": 3,
-                "link": "",
-                "img": "prizes/third.jpg"
-            }
-        ]
-*/
 }
 
 function fileExists(fileUrl) {
@@ -100,19 +81,12 @@ function getPublicStatsInfo(publicUrl, statsBit) {
                 return dd.text()
             })
             .then(d => {
-                // var lines = d.split('\n');
-                // lines.splice(0, 1);
-                // var newtext = lines.join('\n');
-                // displayTotalPlayers(d)
                 resolve(d)
             }).catch(err => {
                 console.log(err);
                 reject(err)
-
-
             })
     })
-    //gid=1572919526#gid=1572919526
 }
 
 function displayAvailablePinsToFind(pinsFile, publicUrl, pinsBit, mediaFolder) {
@@ -150,20 +124,6 @@ function displayAvailablePinsToFind(pinsFile, publicUrl, pinsBit, mediaFolder) {
                         console.log(`File: ${mediaFolder}/${elem.name}.png, does NOT exist, SKIPPING showing that pin!`);
                     }
                 })
-
-                // data.forEach(element => {
-                //     console.log(element);
-                //     out += `
-                //         <div class="pin-image-container">
-                //             <img class="pin-image" src="${mediaFolder}/${element.name}.png"/>
-                //             <div class="pin-image-text-container">
-                //                 <div class="pin-image-title">${element.name}</div>
-                //                 <div class="pin-image-points"><b class="point-value">${pinvalues[element.id - 1].pointPerPin}</b> <b class="points-text">points</b></div>
-                //                 <div class="pin-image-amount">x${pinvalues[element.id - 1].amount}</div>
-                //             </div>
-                //         </div>
-                //     `
-                // });
                 document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
             }).catch(err => {
                 console.log(err);
@@ -227,14 +187,4 @@ function displayTotalPlayers(data) {
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
     loadCurrentPinDroidComp();
-    // fetch(STATS_URL)
-    //     .then(dd => {
-    //         return dd.text()
-    //     })
-    //     .then(ff => {
-    //         displayTotalPlayers(ff)
-    //     }).catch(err => {
-
-    //     })
-    // displayAvailablePins();
 })
