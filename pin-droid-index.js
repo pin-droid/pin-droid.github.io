@@ -10,11 +10,11 @@ function loadCurrentPinDroidComp() {
     $.ajax({
         url: './pindroid.json',
         dataType: 'json',
-        async: false,
+        async: true,
         data: "",
-        success: function(data) {
-          console.log("D");
-          console.log(data);
+        success: function (data) {
+            console.log("D");
+            console.log(data);
             console.log(data);
             console.log(data.current);
             document.getElementById("title-place").innerHTML = data.current.location;
@@ -45,8 +45,8 @@ function loadCurrentPinDroidComp() {
     // })
 }
 
-function displayPrizes(mediaFolder, prizesArr){
-    let sorted = prizesArr.sort((a,b) => {
+function displayPrizes(mediaFolder, prizesArr) {
+    let sorted = prizesArr.sort((a, b) => {
         return a.rank - b.rank
     })
     console.log(sorted);
@@ -57,21 +57,21 @@ function displayPrizes(mediaFolder, prizesArr){
     let other = sorted.filter(e => e.individual == false)
     showers.forEach(prize => {
         let med = ""
-        if(prize.medalimg != null){
+        if (prize.medalimg != null) {
             med = `<img class="prize-item-img-medal" src="/media/images-general/${prize.medalimg}"/>`
         }
-                // <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
+        // <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
         out += `
             <div class="prize-item">
                 <img class="prize-item-img" src="${mediaFolder}/${prize.img}"/>
                 ${med}                
             </div>
-        ` 
+        `
         scaleAmount = scaleAmount - 50
     });
     other.forEach(prize => {
         let med = ""
-        if(prize.medalimg != null){
+        if (prize.medalimg != null) {
             med = `<img class="prize-item-img-medal" src="/media/images-general/${prize.medalimg}"/>`
         }
         outOther += `
@@ -80,7 +80,7 @@ function displayPrizes(mediaFolder, prizesArr){
                 <div class="prize-rank-other" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
                 ${med}                
             </div>
-        ` 
+        `
         scaleAmount = scaleAmount - 50
     });
 
@@ -112,27 +112,27 @@ function getPublicStatsInfo(publicUrl, statsBit) {
 }
 
 function displayAvailablePinsToFind(pinsFile, publicUrl, pinsBit, mediaFolder) {
-        let fullurl = `${publicUrl}/export?exportFormat=csv&${pinsBit}`
-        fetch(fullurl)
-            .then(dd => {
-                return dd.text()
-            })
-            .then(d => {
-                console.log("PINNSS");
-                console.log(d);
+    let fullurl = `${publicUrl}/export?exportFormat=csv&${pinsBit}`
+    fetch(fullurl)
+        .then(dd => {
+            return dd.text()
+        })
+        .then(d => {
+            console.log("PINNSS");
+            console.log(d);
 
-                let splitByLine = d.split("\n");
-                let oo = splitByLine.map(a => ({ "name": a.split(",")[0], "id": a.split(",")[1].replace("\r", ""), "amount": a.split(",")[2].replace("\r", ""), "pointPerPin": a.split(",")[3].replace("\r", "") }))
-                let dump = oo.shift() //drops first line which is colmun headers
-                return oo
-            })
-            .then(pinvalues => {
-                let out = "";
-                console.log(pinvalues);
-                pinvalues.forEach(elem => {
-                    if (fileExists(`${mediaFolder}/${elem.name}.png`)) {
-                        console.log("Exists!");
-                        out += `
+            let splitByLine = d.split("\n");
+            let oo = splitByLine.map(a => ({ "name": a.split(",")[0], "id": a.split(",")[1].replace("\r", ""), "amount": a.split(",")[2].replace("\r", ""), "pointPerPin": a.split(",")[3].replace("\r", "") }))
+            let dump = oo.shift() //drops first line which is colmun headers
+            return oo
+        })
+        .then(pinvalues => {
+            let out = "";
+            console.log(pinvalues);
+            pinvalues.forEach(elem => {
+                if (fileExists(`${mediaFolder}/${elem.name}.png`)) {
+                    console.log("Exists!");
+                    out += `
                         <div class="pin-image-container">
                             <img class="pin-image" src="${mediaFolder}/${elem.name}.png"/>
                             <div class="pin-image-text-container">
@@ -142,16 +142,16 @@ function displayAvailablePinsToFind(pinsFile, publicUrl, pinsBit, mediaFolder) {
                             </div>
                         </div>
                     `
-                    } else {
-                        console.log(`File: ${mediaFolder}/${elem.name}.png, does NOT exist, SKIPPING showing that pin!`);
-                    }
-                })
-                document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
-            }).catch(err => {
-                console.log(err);
-
-
+                } else {
+                    console.log(`File: ${mediaFolder}/${elem.name}.png, does NOT exist, SKIPPING showing that pin!`);
+                }
             })
+            document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
+        }).catch(err => {
+            console.log(err);
+
+
+        })
 }
 
 function displayAvailablePins() {
@@ -208,5 +208,12 @@ function displayTotalPlayers(data) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
+
+    let worker = new Worker("workers/worker.js");
+
+    worker.postMessage(["a","b"]);
+    worker.onmessage = (e) => {
+        console.log("Message received from worker");
+    };
     loadCurrentPinDroidComp();
 })
