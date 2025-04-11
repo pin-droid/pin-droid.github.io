@@ -25,7 +25,7 @@ function loadCurrentPinDroidComp() {
                     console.log(d)
                     displayTotalPlayers(d)
                 })
-            displayAvailablePinsToFind(data.current.pinsDataFile, data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
+            displayAvailablePinsToFind(data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
             displayPrizes(data.current.mediaFolder, data.current.prizes)
         }
     })
@@ -111,7 +111,7 @@ function getPublicStatsInfo(publicUrl, statsBit) {
     })
 }
 
-function displayAvailablePinsToFind(pinsFile, publicUrl, pinsBit, mediaFolder) {
+function displayAvailablePinsToFind(publicUrl, pinsBit, mediaFolder) {
     let fullurl = `${publicUrl}/export?exportFormat=csv&${pinsBit}`
     fetch(fullurl)
         .then(dd => {
@@ -206,14 +206,50 @@ function displayTotalPlayers(data) {
     // document.getElementById(PIN_SHARE_SCORE_DIV).innerText = sharescore
 }
 
+function blocck(){
+    let counter = 0;
+    for (let i = 0; i < 10_000_000_000; i++) {
+      counter++;
+    }
+    document.getElementById("title-place").innerText = `Result: ${counter}`;
+}
+
 document.addEventListener('DOMContentLoaded', function (event) {
     console.log("Loaded");
+    // blocck();
+    // let worker = new Worker("workers/worker.js");
+    // let workerOther = new Worker("workers/testworker.js");
+    // workerOther.postMessage("");
+    // workerOther.onmessage = (e) => {
+    //     document.getElementById("title-place").innerText = `Result: ${e.data}`;
+    // };
 
-    let worker = new Worker("workers/worker.js");
-
-    worker.postMessage(["a","b"]);
-    worker.onmessage = (e) => {
-        console.log("Message received from worker");
-    };
+    // worker.postMessage(["a","b"]);
+    // worker.onmessage = (e) => {
+    //     console.log("Message received from worker= " +JSON.stringify(e));
+    //     console.log("Message received from worker= " +JSON.stringify(e.data));
+    // };
     loadCurrentPinDroidComp();
+
+
+    // let a = new Worker("workers/requestWorker.js")
+    // a.postMessage("")
+    // a.onmessage = (b) => {
+    //     console.log("********");
+        
+    //     console.log(b.data);
+    //     console.log("********");
+        
+    // }
+    // let aa = new Worker("workers/temp.js")
+    // aa.postMessage("")
+    // console.log("-----------");
+    
+    // aa.onmessage = (b) => {
+    //     console.log("********");
+        
+    //     console.log(b.data);
+    //     console.log("********");
+        
+    // }
 })
