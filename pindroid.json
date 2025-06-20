@@ -1,16 +1,16 @@
 {
     "current": {
-        "location": "paris",
+        "location": "ny",
         "year": "2025",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
-        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfYeC3WwsArZ0AeCVK9FU1OKMCFH9aFLlCfi7xfXaDry6Hagg/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl": "https://docs.google.com/spreadsheets/d/14CDiDNarGLZh5P-SGKU8ansbLgl1puV5v-YieRZAR5U",
+        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSenbJSkJC-ZFsQLSJgFhtsSXyCy3xC2bDV1-B_KZNug_j48fA/viewform?usp=dialog&entry.2113672436=",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/1agcayc9gzfIFMfJSWEIBUV9yqY7EhG4zpotwNKmitlc",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "scoresBit": "gid=0#gid=0",
-        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeScq9vymMz6WlOIpwW-mfIlgnHzQAjUwdnvibxLPG375xXxw/viewform?usp=dialog",
+        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSebRNskG0dEGhXAc_Ab5au-otEQ8Q5nzPyIznBUQ9BEjjFA2g/viewform?usp=dialog",
         "prizes": [
             {
                 "rank": 1,
@@ -47,6 +47,53 @@
         ]
     },
     "past": [
+        {
+            "location": "paris",
+            "year": "2025",
+            "mediaFolder": "/media/droidcon-bugdroid-pins",
+            "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfYeC3WwsArZ0AeCVK9FU1OKMCFH9aFLlCfi7xfXaDry6Hagg/viewform?usp=dialog&entry.2113672436=",
+            "publicUrl": "https://docs.google.com/spreadsheets/d/14CDiDNarGLZh5P-SGKU8ansbLgl1puV5v-YieRZAR5U",
+            "statsBit": "gid=1572919526#gid=1572919526",
+            "pinsBit": "gid=1871628007#gid=1871628007",
+            "galleryBit": "gid=774482806#gid=774482806",
+            "stillOutThereBit": "gid=1768651266#gid=1768651266",
+            "scoresBit": "gid=0#gid=0",
+            "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeScq9vymMz6WlOIpwW-mfIlgnHzQAjUwdnvibxLPG375xXxw/viewform?usp=dialog",
+            "prizes": [
+                {
+                    "rank": 1,
+                    "individual": true,
+                    "rankText": "1st",
+                    "link": "",
+                    "img": "prizes/first.jpg",
+                    "medalimg": "1st.png"
+                },
+                {
+                    "rank": 2,
+                    "individual": true,
+                    "rankText": "2nd",
+                    "link": "",
+                    "img": "prizes/second.jpg",
+                    "medalimg": "2nd.png"
+                },
+                {
+                    "rank": 3,
+                    "individual": true,
+                    "rankText": "3rd",
+                    "link": "",
+                    "img": "prizes/third.jpg",
+                    "medalimg": "3rd.png"
+                },
+                {
+                    "rank": 4,
+                    "individual": false,
+                    "rankText": "4th to 10th (Inclusive)",
+                    "link": "",
+                    "img": "prizes/kendroid.png",
+                    "medalimg": null
+                }
+            ]
+        },
         {
             "location": "london",
             "year": "2024",
