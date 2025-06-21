@@ -41,7 +41,9 @@ function showEm(data, mediaFolder) {
         let bits = element.replace("\r", "").split(",")
         if (bits[0] != "") {
             console.log(bits);
-            let justImg = bits[0].replace(/_[0-9]+/, "")
+            // let justImg = bits[0].replace(/_[0-9]+/, "")
+            let justImg = bits[0].replace(/_[0-9]+_[a-zA-Z-0-9]+/, "") //also remove the place name after it
+            console.log(justImg)
             let pinAvailClass="pin-still-out-there"
             console.log(`rege: ${justImg}`);
             if(bits[1] != "y"){
