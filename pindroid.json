@@ -17,7 +17,7 @@
                 "individual": true,
                 "rankText": "1st",
                 "link": "",
-                "img": "prizes/first.jpg",
+                "img": "prizes-ny/first.jpg",
                 "medalimg": "1st.png"
             },
             {
@@ -25,7 +25,7 @@
                 "individual": true,
                 "rankText": "2nd",
                 "link": "",
-                "img": "prizes/second.jpg",
+                "img": "prizes-ny/second.jpg",
                 "medalimg": "2nd.png"
             },
             {
@@ -33,16 +33,8 @@
                 "individual": true,
                 "rankText": "3rd",
                 "link": "",
-                "img": "prizes/third.jpg",
-                "medalimg": "3rd.png"
-            },
-            {
-                "rank": 4,
-                "individual": false,
-                "rankText": "4th to 10th (Inclusive)",
-                "link": "",
                 "img": "prizes/kendroid.png",
-                "medalimg": null
+                "medalimg": "3rd.png"
             }
         ]
     },
