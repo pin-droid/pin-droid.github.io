@@ -1,16 +1,16 @@
 {
     "current": {
-        "location": "ny",
+        "location": "berlin",
         "year": "2025",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
-        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSenbJSkJC-ZFsQLSJgFhtsSXyCy3xC2bDV1-B_KZNug_j48fA/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl": "https://docs.google.com/spreadsheets/d/1agcayc9gzfIFMfJSWEIBUV9yqY7EhG4zpotwNKmitlc",
+        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfg36oRQGQSO9np7IYqNYRtmO7qKpTxIh5trDwh6SSjFvHu9A/viewform?usp=dialog&entry.2113672436=",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/1tr9UTvrKTBc23FL-A0znqKWzA_2I9w487SA2XW8Mod4",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "scoresBit": "gid=0#gid=0",
-        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSebRNskG0dEGhXAc_Ab5au-otEQ8Q5nzPyIznBUQ9BEjjFA2g/viewform?usp=dialog",
+        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeDwKTTTXP_SlnAPQJtlFAshQNZms1B1nwWTISVWCLQKYBjBg/viewform?usp=dialog",
         "prizes": [
             {
                 "rank": 1,
@@ -39,6 +39,45 @@
         ]
     },
     "past": [
+        {
+            "location": "ny",
+            "year": "2025",
+            "mediaFolder": "/media/droidcon-bugdroid-pins",
+            "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSenbJSkJC-ZFsQLSJgFhtsSXyCy3xC2bDV1-B_KZNug_j48fA/viewform?usp=dialog&entry.2113672436=",
+            "publicUrl": "https://docs.google.com/spreadsheets/d/1agcayc9gzfIFMfJSWEIBUV9yqY7EhG4zpotwNKmitlc",
+            "statsBit": "gid=1572919526#gid=1572919526",
+            "pinsBit": "gid=1871628007#gid=1871628007",
+            "galleryBit": "gid=774482806#gid=774482806",
+            "stillOutThereBit": "gid=1768651266#gid=1768651266",
+            "scoresBit": "gid=0#gid=0",
+            "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSebRNskG0dEGhXAc_Ab5au-otEQ8Q5nzPyIznBUQ9BEjjFA2g/viewform?usp=dialog",
+            "prizes": [
+                {
+                    "rank": 1,
+                    "individual": true,
+                    "rankText": "1st",
+                    "link": "",
+                    "img": "prizes-ny/first.jpg",
+                    "medalimg": "1st.png"
+                },
+                {
+                    "rank": 2,
+                    "individual": true,
+                    "rankText": "2nd",
+                    "link": "",
+                    "img": "prizes-ny/second.jpg",
+                    "medalimg": "2nd.png"
+                },
+                {
+                    "rank": 3,
+                    "individual": true,
+                    "rankText": "3rd",
+                    "link": "",
+                    "img": "prizes-ny/second.jpg",
+                    "medalimg": "3rd.png"
+                }
+            ]
+        },
         {
             "location": "paris",
             "year": "2025",
