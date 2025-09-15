@@ -95,6 +95,22 @@ function fileExists(fileUrl) {
     return http.status != 404;
 }
 
+// function getEventsBits(publicUrl, eventsBit) {
+//     let fullurl = `${publicUrl}/export?exportFormat=csv&${eventsBit}`
+//     return new Promise((resolve, reject) => {
+//         fetch(fullurl)
+//             .then(dd => {
+//                 return dd.text()
+//             })
+//             .then(d => {
+//                 resolve(d)
+//             }).catch(err => {
+//                 console.log(err);
+//                 reject(err)
+//             })
+//     })
+// }
+
 function getPublicStatsInfo(publicUrl, statsBit) {
     let fullurl = `${publicUrl}/export?exportFormat=csv&${statsBit}`
     return new Promise((resolve, reject) => {
@@ -189,6 +205,7 @@ function displayAvailablePins() {
     });
 }
 
+
 function displayTotalPlayers(data) {
     let splitByLine = data.split("\n");
     splitByLine.shift();
@@ -206,10 +223,10 @@ function displayTotalPlayers(data) {
     // document.getElementById(PIN_SHARE_SCORE_DIV).innerText = sharescore
 }
 
-function blocck(){
+function blocck() {
     let counter = 0;
     for (let i = 0; i < 10_000_000_000; i++) {
-      counter++;
+        counter++;
     }
     document.getElementById("title-place").innerText = `Result: ${counter}`;
 }
@@ -236,20 +253,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // a.postMessage("")
     // a.onmessage = (b) => {
     //     console.log("********");
-        
+
     //     console.log(b.data);
     //     console.log("********");
-        
+
     // }
     // let aa = new Worker("workers/temp.js")
     // aa.postMessage("")
     // console.log("-----------");
-    
+
     // aa.onmessage = (b) => {
     //     console.log("********");
-        
+
     //     console.log(b.data);
     //     console.log("********");
-        
+
     // }
 })

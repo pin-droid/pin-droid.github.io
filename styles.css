@@ -136,7 +136,7 @@ body.pin-droid {
 }
 
 
-.leader-board-entry-name-text{
+.leader-board-entry-name-text {
     font-size: 120%;
 }
 
@@ -144,23 +144,23 @@ body.pin-droid {
     text-align: left;
 }
 
-.leader-board-entry-collection{
+.leader-board-entry-collection {
     font-size: 50%;
 
 }
 
-.tiny-image{
+.tiny-image {
     width: 5em;
     margin-right: 0.5em;
     border-radius: 50%;
     border: 1px solid black;
 }
 
-.highlight-number{
-        background: black;
-        padding: 0 0.25em;
-        border-radius: 10px;
-        font-size: 180%;
+.highlight-number {
+    background: black;
+    padding: 0 0.25em;
+    border-radius: 10px;
+    font-size: 180%;
 }
 
 #give-points-amount {
@@ -199,6 +199,7 @@ body.pin-droid {
     /* initial-value: #dfb756; */
     initial-value: #9d1525;
 }
+
 /* --crown-yellow: #dfb756;
 --crown-orange: #e58d49;
 --crown-red: #e5543b; */
@@ -218,6 +219,7 @@ body.pin-droid {
     /* initial-value: #dfb756; */
     initial-value: #29499a;
 }
+
 /* --crown-yellow: #dfb756;
 --crown-orange: #e58d49;
 --crown-red: #e5543b; */
@@ -237,6 +239,7 @@ body.pin-droid {
     /* initial-value: #dfb756; */
     initial-value: #e9b12d;
 }
+
 /* --crown-yellow: #dfb756;
 --crown-orange: #e58d49;
 --crown-red: #e5543b; */
@@ -246,6 +249,18 @@ body.pin-droid {
     inherits: false;
     /* initial-value: #ffffff; */
     /* initial-value: #e58d49; */
+    initial-value: #f4ca66;
+}
+
+@property --colorEventsOne {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #e9b12d;
+}
+
+@property --colorEventsTwo {
+    syntax: '<color>';
+    inherits: false;
     initial-value: #f4ca66;
 }
 
@@ -295,7 +310,7 @@ body.pin-droid {
     background-size: 300%;
     background-position-x: 100%;
     /* animation: shimmer 1s ease infinite alternate; */
-    animation: shimmer 4s linear infinite ;
+    animation: shimmer 4s linear infinite;
     /* animation: shimmer 3s ease infinite alternate; */
 }
 
@@ -309,7 +324,7 @@ body.pin-droid {
     background-size: 300%;
     background-position-x: 100%;
     /* animation: shimmer 1s ease infinite alternate; */
-    animation: shimmer 4s linear infinite ;
+    animation: shimmer 4s linear infinite;
     /* animation: shimmer 3s ease infinite alternate; */
 }
 
@@ -318,7 +333,7 @@ body.pin-droid {
     color: white;
 }
 
-.interest a{
+.interest a {
     color: white;
 }
 
@@ -332,8 +347,16 @@ body.pin-droid {
     background-size: 300%;
     background-position-x: 100%;
     /* animation: shimmer 1s ease infinite alternate; */
-    animation: shimmer 2s linear infinite ;
+    animation: shimmer 2s linear infinite;
     /* animation: shimmer 3s ease infinite alternate; */
+}
+
+
+.events {
+    background: linear-gradient(var(--angle), var(--colorEventsOne) 40%, var(--colorEventsTwo) 50%, var(--colorEventsOne) 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 2s linear infinite;
 }
 
 @keyframes shimmer {
@@ -444,7 +467,8 @@ body.pin-droid {
 .important-card {
     background: var(--darker-yellow);
     padding: 0.4em;
-    margin: 0px 1em;
+    /* margin: 0px 1em; */
+    margin: 0.5em;
     color: white;
     border-radius: 10px;
     border: 0.25em solid var(--red);
@@ -483,16 +507,14 @@ body.pin-droid {
 
 }
 
-.still-there-container{
+.still-there-container {
     width: 10%;
     position: relative;
 }
 
-.pin-still-out-there{
+.pin-still-out-there {}
 
-}
-
-.still-there-id{
+.still-there-id {
     position: absolute;
     bottom: 1em;
     left: 50%;
@@ -505,7 +527,7 @@ body.pin-droid {
     color: black;
 }
 
-.pin-gone{
+.pin-gone {
     opacity: 0.3;
 }
 
@@ -639,7 +661,7 @@ h1 {
     font-size: 250%;
 }
 
-.h1-title{
+.h1-title {
     display: inline-flex;
     gap: 0.5em;
 }
@@ -926,7 +948,7 @@ a {
 }
 
 @media screen and (max-width: 650px) {
-    .still-there-id{
+    .still-there-id {
         position: absolute;
         bottom: 1em;
         left: 50%;
@@ -939,19 +961,19 @@ a {
         color: black;
     }
 
-    .still-there-container{
+    .still-there-container {
         width: 15%;
         position: relative;
     }
 
 
 
-.tiny-image{
-    width: 2em;
-    margin-right: 0.5em;
-    border-radius: 50%;
-    border: 1px solid black;
-}
+    .tiny-image {
+        width: 2em;
+        margin-right: 0.5em;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
 }
 
 /* Phone */
@@ -964,9 +986,11 @@ a {
         text-align: center;
         width: 100%;
     }
-    .steps-list{
+
+    .steps-list {
         margin: 0em 5% !important;
     }
+
     .pin-image {
         width: 8em;
     }
@@ -976,16 +1000,16 @@ a {
     }
 
 
-.tiny-image{
-    width: 1em;
-    margin-right: 0.5em;
-    border-radius: 50%;
-    border: 1px solid black;
-}
+    .tiny-image {
+        width: 1em;
+        margin-right: 0.5em;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
 
 }
 
-#page-footer{
+#page-footer {
     margin-bottom: 0.5em;
     font-weight: 100;
     font-style: italic;
@@ -1010,28 +1034,31 @@ a {
     flex-wrap: wrap;
 }
 
-.prize-item{
+.prize-item {
 
     position: relative;
 }
-.prize-item-img{
+
+.prize-item-img {
     height: 15em;
     border-radius: 3em;
     border: solid 4px var(--dot-green);
 }
-.prize-item-img-other{
+
+.prize-item-img-other {
     height: 6em;
     border-radius: 1em;
     margin-bottom: 1em;
     /* border: solid 4px var(--dot-green);*/
 }
-.prize-box{
+
+.prize-box {
     border-color: var(--dot-green);
     background-color: var(--darker-green);
 }
 
 
-.prize-rank{
+.prize-rank {
     position: absolute;
     bottom: 0.25em;
     left: 50%;
@@ -1043,7 +1070,7 @@ a {
     border: 5px solid;
 }
 
-.prize-item-img-medal{
+.prize-item-img-medal {
     position: absolute;
     width: 40%;
     top: 0;
@@ -1052,17 +1079,17 @@ a {
     filter: drop-shadow(0px 0px 6px #000);
 }
 
-h3{
+h3 {
     margin-top: 0 !important;
     font-size: 75%;
 }
 
-.mini-icon{
+.mini-icon {
     width: 2em;
 }
 
 
-.prize-rank-other{
+.prize-rank-other {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -1076,18 +1103,18 @@ h3{
 }
 
 
-.tie-break-header{
+.tie-break-header {
 
     display: inline-block;
 }
 
-.jiggler{
+.jiggler {
     cursor: pointer;
     animation: jiggle 1s infinite alternate linear;
 }
 
 
-#exp-col-text{
+#exp-col-text {
     cursor: pointer;
     display: inline-block;
     font-size: 150%;
@@ -1095,7 +1122,7 @@ h3{
     animation: jiggle 1s infinite alternate linear;
 }
 
-#tie-details{
+#tie-details {
     background: white;
     color: black;
     border-top: 4px solid black;
@@ -1105,7 +1132,7 @@ h3{
     padding: 0.5em 0px;
 }
 
-#tie-details p{
+#tie-details p {
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -1113,39 +1140,38 @@ h3{
 @keyframes jiggle {
     from {
         transform: rotateZ(2deg);
-    }   
+    }
+
     to {
 
         transform: rotateZ(-2deg);
-    } 
+    }
 }
 
-.found {
+.found {}
 
-}
-
-.not-found{
+.not-found {
     opacity: 0.3;
     scale: 0.8;
 }
 
 
-.steps-list{
+.steps-list {
     margin: 0em 10%;
 }
 
-.step-title{
+.step-title {
     text-align: left;
     background: black;
     padding: 0.2em;
     border-radius: 0.5em;
 }
 
-.step-split{
+.step-split {
     height: 1em;
 }
 
-.step-instruction{
+.step-instruction {
     margin: 0.5em 0px;
     text-align: left;
     padding: 0 1em;
@@ -1154,7 +1180,7 @@ h3{
     font-size: 110%;
 }
 
-li a{
+li a {
     font-size: 100%;
 }
 
@@ -1169,18 +1195,18 @@ li i {
     font-size: 80%;
 }
 
-li span.highlight{
+li span.highlight {
     background: #0622b1;
     color: white;
     padding: 1px 8px;
 }
 
-li span.sidenote{
+li span.sidenote {
     opacity: 0.7;
     font-style: italic;
 }
 
-li.question{
+li.question {
     font-size: 120%;
     font-weight: bold;
     background: #414141;
@@ -1188,7 +1214,7 @@ li.question{
     list-style: none;
 }
 
-li.answer{
+li.answer {
     color: blue;
     background: white;
     padding: 2px 10px;
@@ -1196,7 +1222,7 @@ li.answer{
     margin-bottom: 1em;
 }
 
-.list-image{
+.list-image {
     width: 50%;
     position: relative;
     left: 50%;
@@ -1206,7 +1232,7 @@ li.answer{
     border-radius: 5px;
 }
 
-.list-image-noborder{
+.list-image-noborder {
     width: 30%;
     position: relative;
     left: 50%;
@@ -1214,10 +1240,129 @@ li.answer{
     transform: translateX(-50%);
 }
 
-.list-image-mid{
+.list-image-mid {
     width: 30%;
     position: relative;
     left: 50%;
     margin: 0.5em 0px;
     transform: translateX(-50%);
+}
+
+.wobble-card {
+    animation: wobble;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@keyframes wobble {}
+
+
+
+
+/* #talks-button:hover {
+    scale: 1.1;
+    background: var(--main-blue-light);
+    color: var(--main-white);
+}
+
+#talks-button:active {
+    background: var(--main-blue-darker);
+    color: var(--main-white);
+} */
+
+@keyframes wobble {
+    0% {
+        transform: rotateZ(-2deg);
+    }
+
+    50% {
+        transform: rotateZ(2deg);
+    }
+
+    100% {
+        transform: rotateZ(-2deg);
+    }
+}
+
+.focus-link {
+    text-shadow: white 0 0 3px;
+}
+
+
+.event-datetime {
+    display: flex;
+    gap: 2em;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+    font-size: 120%;
+}
+
+.event-date {}
+
+.event-time {}
+
+.event-name {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.event-location {
+    color: var(--much-darker-yellow);
+}
+
+.event-what {
+    font-size: 90%;
+    font-style: italic;
+}
+
+.v-spacer {
+    height: 0.5em;
+}
+
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.passed {
+    background: lightgray;
+    opacity: 0.5;
+    position: relative;
+}
+
+.passed:before
+{ 
+    content: "";
+    position: absolute;
+    background: red;
+    left: 0px;
+    top: 50%;
+    transform: rotateZ(18deg);
+    width: 100%;
+    height: 0.5em;
 }
