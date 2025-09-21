@@ -162,6 +162,7 @@ body.pin-droid {
     border-radius: 10px;
     font-size: 180%;
 }
+
 .highlight-text {
     background: blue;
     padding: 0 0.25em;
@@ -1024,6 +1025,7 @@ a {
     background: black;
     opacity: 0.5;
     padding: 10px 0px;
+    position: relative;
 }
 
 #page-footer a {
@@ -1393,4 +1395,31 @@ li.answer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wt {
+    bottom: -5px;
+    position: absolute;
+    right: 0;
+    margin-right: 1em;
+    font-size: 60%;
+}
+
+#dialog {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 4em;
+    background: white;
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid;
+}
+
+#dialog span {
+    font-size: 120%;
+    background: blue;
+    color: white;
+    padding: 1px 6px;
+    /* margin-left: 1em; */
 }

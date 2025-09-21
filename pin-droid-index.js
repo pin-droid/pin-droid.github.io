@@ -304,3 +304,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     // }
 })
+
+function addTheExtraHTML(){
+    var dialogBox = document.createElement('div')
+    dialogBox.id = 'dialog'
+    dialogBox.innerHTML = `<div>Tell Ben this code:<br><span>SCREW FLANDERS</span><br>for a PIN!</div>`
+    document.body.appendChild(dialogBox)
+
+    setTimeout(() => {
+        removeTheExtraHTML() 
+    }, 3000);
+}
+
+function removeTheExtraHTML(){
+    let elem = document.getElementById('dialog')
+    if (elem != undefined && elem != null) {
+        document.body.removeChild(elem)
+    }
+}
+
+function displayHint(){
+    console.log("-------")
+    addTheExtraHTML()
+}
