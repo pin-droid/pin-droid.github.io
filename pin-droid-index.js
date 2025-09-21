@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 function addTheExtraHTML(){
     var dialogBox = document.createElement('div')
     dialogBox.id = 'dialog'
-    dialogBox.innerHTML = `<div>Tell Ben this code:<br><span>SCREW FLANDERS</span><br>for a PIN!</div>`
+    dialogBox.innerHTML = `<div>Tell Ben this code:<br><span>SCREW FLANDERS</span><br>if you are first, you'll get a PIN!</div>`
     document.body.appendChild(dialogBox)
 
     setTimeout(() => {
