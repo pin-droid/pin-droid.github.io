@@ -3,6 +3,54 @@ const AVAILABLE_PINS_DIV = "available-pins";
 const PLAYER_COUNT_DIV = "player-count"
 const PIN_SHARE_SCORE_DIV = "give-points-amount"
 
+function printHackerMessage(){
+    const oi = `
+ _______ __         ___ ___               __ 
+|       |__|       |   |   |.-----.--.--.|  |
+|   -   |  |__      \\     / |  _  |  |  ||__|
+|_______|__|  |      |___|  |_____|_____||__|
+            |_|                              
+    `
+    const yesyou = `
+ ___ ___                   ___ ___               __ 
+|   |   |.-----.-----.    |   |   |.-----.--.--.|  |
+ \\     / |  -__|__ --|     \\     / |  _  |  |  ||__|
+  |___|  |_____|_____|      |___|  |_____|_____||__|
+                                                                    
+    `
+    const hintMessage = `
+
+Don't try to be all clever & see if you can find any sort of "HACKS" in the inspector!
+    `
+    const rewardMessage = `
+
+INFACT, you know what... I like your style & your desperation... 
+    `
+    const comeFindBenMessage = `
+
+Come & find Ben (in person) & tell him this code phrase:
+    `
+    const codeWord = `
+
+---------------------------------------------------------------
+"INSPECTED INSPECTOR, I THINK WE'VE FOUND SOMETHING OVER HERE!"
+---------------------------------------------------------------
+    `
+    const outcomeMessage = `
+
+And then, if you are the first, you will get a reward for your valiant efforts!
+    `
+    console.log(oi)
+    console.log(yesyou)
+    console.log(hintMessage)
+    console.log(rewardMessage)
+    console.log(comeFindBenMessage)
+    console.log(codeWord)
+    console.log(outcomeMessage)
+}
+
+printHackerMessage()
+
 function loadCurrentPinDroidComp() {
     // $.ajaxSetup({
     //     async: false
@@ -13,16 +61,11 @@ function loadCurrentPinDroidComp() {
         async: true,
         data: "",
         success: function (data) {
-            console.log("D");
-            console.log(data);
-            console.log(data);
-            console.log(data.current);
             document.getElementById("title-place").innerHTML = data.current.location;
             document.getElementById("title-year").innerHTML = data.current.year;
             document.getElementById("registration-link").href = data.current.registrationUrl;
             getPublicStatsInfo(data.current.publicUrl, data.current.statsBit)
                 .then(d => {
-                    console.log(d)
                     displayTotalPlayers(d)
                 })
             displayAvailablePinsToFind(data.current.publicUrl, data.current.pinsBit, data.current.mediaFolder)
@@ -49,7 +92,6 @@ function displayPrizes(mediaFolder, prizesArr) {
     let sorted = prizesArr.sort((a, b) => {
         return a.rank - b.rank
     })
-    console.log(sorted);
     let out = ""
     let outOther = ""
     let scaleAmount = 250
@@ -134,8 +176,6 @@ function displayAvailablePinsToFind(publicUrl, pinsBit, mediaFolder) {
             return dd.text()
         })
         .then(d => {
-            console.log("PINNSS");
-            console.log(d);
 
             let splitByLine = d.split("\n");
             let oo = splitByLine.map(a => ({ "name": a.split(",")[0], "id": a.split(",")[1].replace("\r", ""), "amount": a.split(",")[2].replace("\r", ""), "pointPerPin": a.split(",")[3].replace("\r", "") }))
@@ -144,10 +184,8 @@ function displayAvailablePinsToFind(publicUrl, pinsBit, mediaFolder) {
         })
         .then(pinvalues => {
             let out = "";
-            console.log(pinvalues);
             pinvalues.forEach(elem => {
                 if (fileExists(`${mediaFolder}/${elem.name}.png`)) {
-                    console.log("Exists!");
                     out += `
                         <div class="pin-image-container">
                             <img class="pin-image" src="${mediaFolder}/${elem.name}.png"/>
@@ -165,8 +203,6 @@ function displayAvailablePinsToFind(publicUrl, pinsBit, mediaFolder) {
             document.getElementById(AVAILABLE_PINS_DIV).innerHTML = out;
         }).catch(err => {
             console.log(err);
-
-
         })
 }
 
@@ -184,7 +220,6 @@ function displayAvailablePins() {
             .then(pinvalues => {
                 let out = "";
                 data.forEach(element => {
-                    console.log(element);
                     out += `
                         <div class="pin-image-container">
                             <img class="pin-image" src="/media/droidcon-place-pins/${element.img}.png"/>
@@ -232,7 +267,6 @@ function blocck() {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
-    console.log("Loaded");
     // blocck();
     // let worker = new Worker("workers/worker.js");
     // let workerOther = new Worker("workers/testworker.js");
