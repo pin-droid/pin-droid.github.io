@@ -162,6 +162,12 @@ body.pin-droid {
     border-radius: 10px;
     font-size: 180%;
 }
+.highlight-text {
+    background: blue;
+    padding: 0 0.25em;
+    border-radius: 10px;
+    font-size: 160%;
+}
 
 #give-points-amount {
     background: black;
