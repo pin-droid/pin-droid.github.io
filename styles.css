@@ -1355,8 +1355,7 @@ li.answer {
     position: relative;
 }
 
-.passed:before
-{ 
+.passed:before {
     content: "";
     position: absolute;
     background: red;
@@ -1365,4 +1364,27 @@ li.answer {
     transform: rotateZ(18deg);
     width: 100%;
     height: 0.5em;
+}
+
+
+
+.fluid-yt {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.fluid-yt>iframe {
+    width: 100%;
+    height: 100%;
+    border: solid white 1vw;
+    border-radius: 5px;
+}
+
+.video-container {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
