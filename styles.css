@@ -1423,3 +1423,50 @@ li.answer {
     padding: 1px 6px;
     /* margin-left: 1em; */
 }
+
+.rules-card {
+    max-width: 80%;
+}
+
+.explainer-p {
+    font-family: monospace;
+    margin-bottom: 1em;
+}
+
+.explainer-imp {
+    font-weight: bold;
+    background-color: var(--main-green);
+    color: var(--white);
+    padding: 0.8em;
+}
+
+.explainer-li {
+    font-family: monospace;
+    margin-bottom: 0.5em;
+    text-align: left;
+    list-style-type: disclosure-closed;
+}
+
+.explainer-li span {
+    font-weight: 900;
+    padding: 1px 5px;
+    font-size: 110%;
+}
+
+.rules-card h2 {
+    font-size: 120%;
+}
+
+.example-img {
+
+    width: 10em;
+    border: 3px solid black;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}

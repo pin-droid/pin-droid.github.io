@@ -18,7 +18,7 @@
                 "individual": true,
                 "rankText": "1st",
                 "link": "",
-                "img": "prizes-ny/first.jpg",
+                "img": "prizes/r2.webp",
                 "medalimg": "1st.png"
             },
             {
@@ -26,7 +26,7 @@
                 "individual": true,
                 "rankText": "2nd",
                 "link": "",
-                "img": "prizes-ny/second.jpg",
+                "img": "prizes/flowers.webp",
                 "medalimg": "2nd.png"
             },
             {
@@ -34,7 +34,7 @@
                 "individual": true,
                 "rankText": "3rd",
                 "link": "",
-                "img": "prizes-ny/second.jpg",
+                "img": "prizes/chicken.webp",
                 "medalimg": "3rd.png"
             }
         ]

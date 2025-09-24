@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+suffix="-shrunk"
+files=($(gfind . -type f -regextype posix-extended -regex ".*\.(png|jpg)" -printf "%P\n"))
+
+interactive_mode=false
+override_mode=false
+ACTION_KEYWORD="yes"
+ACTION_KEYWORD_DEFAULT="no"
+
+compressFile(){
+    local i="${1}"
+    echo "DU: $(du $i)"
+    presize=$(du -h "$i" | awk '{print $1}')
+    relative_path=$(dirname "$i") 
+    filename=$(basename "$i")
+    extension="${filename#*.}"
+    base_name="${filename%.*}"
+    finalName="${relative_path}/${base_name}${suffix}.webp"
+    if [[ $override_mode = true ]]; then
+        finalName="${relative_path}/${base_name}.webp"
+    fi
+    echo " Outputting: ${finalName}"
+    ffmpeg -i "${i}" -y -hide_banner -loglevel error -vf "scale=iw*0.5:ih*0.5:flags=lanczos"  -q:v 75 -compression_level 8 "${finalName}"
+    if [[ $override_mode = true ]]; then
+        rm "$i"
+    fi
+    postsize=$(du -h "$finalName" | awk '{print $1}')
+    if [[ $? -eq 0 ]]; then
+        echo "✅ Successful compression of: ${i} (pre: ${presize}, post: ${postsize})"
+    else
+        echo "❌ Failed to compress: ${i}"
+    fi
+}
+
+while getopts "ois:" opt; do
+    case $opt in
+        o)
+            echo "Override mode..."
+            #TODO check if user sure
+            override_mode=true
+            ;;
+        i)
+            echo "Interactive mode..."
+            interactive_mode=true
+            ;;
+        s)
+            echo "suffix is:"
+            echo "s - $OPTARG"
+            suffix="$OPTARG"
+            ;;
+        *)
+            echo "invalid option or argument $OPTARG"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ $interactive_mode = true ]]; then
+    tmp_file=$(mktemp)
+
+    trap 'rm -f "$tmp_file"' EXIT
+
+    echo "# Edit this file to select which items to process." > "$tmp_file"
+    echo "# To skip an item, change 'yes' to any other word (e.g., 'no' or 'skip')." >> "$tmp_file"
+    echo "# Lines starting with '#' are ignored." >> "$tmp_file"
+    echo "" >> "$tmp_file"
+    for item in "${files[@]}"; do
+        echo "$ACTION_KEYWORD_DEFAULT $item" >> "$tmp_file"
+    done
+
+    editor="${EDITOR:-nano}"
+    "$editor" "$tmp_file"
+
+    if [[ $? -ne 0 ]]; then
+        echo "Editor exited with an error or was aborted. Aborting script."
+        exit 1
+    fi
+
+    #while read -r action item; do
+    while IFS= read -r line; do
+        # Skip empty lines and comments.
+        [[ -z "$line" ]] || [[ "$line" =~ ^# ]] && continue
+
+        action="${line%% *}"
+        item="${line#* }"
+        echo "Action selected: ${action}"
+        if [[ "$action" == "$ACTION_KEYWORD" ]]; then
+            compressFile "$item"
+        else
+            echo "⏭️ Skipping: $item"
+        fi
+    done < "$tmp_file"
+fi
+
+exit 0
+#for i in "${files[@]}"; do
+#    echo "--$i"
+#    #relative_path="${i%/*}" 
+#    relative_path=$(dirname "$i") 
+#    failename=$(basename "$i")
+#    extension="${filename#*.}"
+#    base_name="${filename%.*}"
+#    # ffmpeg -i bk-L.png -vf "scale=iw*0.5:ih*0.5:flags=lanczos"  -q:v 75 -compression_level 8 out3.webp
+#    echo "==$extension"
+#    echo "000 ${filename} - ${base_name}"
+#    echo "++${relative_path}"
+#    ffmpeg -i "${i}" -vf "scale=iw*0.5:ih*0.5:flags=lanczos"  -q:v 75 -compression_level 8 "${relative_path}/${base_name}${suffix}.webp"
+#    exit 0
+#done
+#ffmpeg -i bk-L.png -vf "scale=iw*0.5:ih*0.5:flags=lanczos"  -q:v 75 -compression_level 8 out3.webp
