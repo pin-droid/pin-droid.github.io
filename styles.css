@@ -1363,7 +1363,7 @@ li.answer {
     position: relative;
 }
 
-.passed:before {
+/* .passed:before {
     content: "";
     position: absolute;
     background: red;
@@ -1372,6 +1372,10 @@ li.answer {
     transform: rotateZ(18deg);
     width: 100%;
     height: 0.5em;
+} */
+
+.passed{
+    text-decoration: line-through;
 }
 
 
