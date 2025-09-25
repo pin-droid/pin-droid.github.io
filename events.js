@@ -75,11 +75,10 @@ function displayUpcomingEvents(data) {
         };
     });
 
-    // Sort the events by date and time, with the newest at the top
-    let sorted = events.toSorted((a, b) => b.datetimeObj + a.datetimeObj);
-    //let sorted = events.sort((a, b) => b.datetimeObj + a.datetimeObj);
+    let sorted = events.toSorted((a, b) => a.datetimeObj - b.datetimeObj);
 
     const now = new Date();
+    console.log(`------> ${now} vs ${sorted.map(a => now < a.datetimeObj)}`)
 
     sorted.filter(e => now < e.datetimeObj).forEach(event => {
         let extra = "";
