@@ -63,7 +63,8 @@ function displayUpcomingEvents(data) {
         let [day, month, year] = date.split('/');
         let formattedDate = `${year}-${month}-${day}T${time}`;
         let eventDate = new Date(formattedDate);
-        
+        console.log(eventDate)
+
         return {
             name: vals[0],
             what: vals[1],
@@ -75,13 +76,14 @@ function displayUpcomingEvents(data) {
     });
 
     // Sort the events by date and time, with the newest at the top
-    events.sort((a, b) => b.datetimeObj - a.datetimeObj);
+    let sorted = events.toSorted((a, b) => b.datetimeObj + a.datetimeObj);
+    //let sorted = events.sort((a, b) => b.datetimeObj + a.datetimeObj);
 
     const now = new Date();
 
-    events.forEach(event => {
+    sorted.filter(e => now < e.datetimeObj).forEach(event => {
         let extra = "";
-        
+
         // Add the "passed" class if the event is in the past
         if (now > event.datetimeObj) {
             extra = "passed";
@@ -102,6 +104,31 @@ function displayUpcomingEvents(data) {
     });
 
     document.getElementById("events-list").innerHTML = out;
+
+    let outPast = ""
+    sorted.filter(e => now > e.datetimeObj).forEach(event => {
+        let extra = "";
+
+        // Add the "passed" class if the event is in the past
+        if (now > event.datetimeObj) {
+            extra = "passed";
+        }
+
+        outPast += `
+            <div class="card ${extra}">
+                <div class="event-datetime">
+                    <div class="event-date">${event.date}</div>
+                    <div class="event-time">${event.time}</div>
+                </div>
+                <div class="event-location">${event.location}</div>
+                <div class="v-spacer"></div>
+                <div class="event-name">${event.name}</div>
+                <div class="event-what">${event.what}</div>
+            </div>
+        `;
+    });
+
+    document.getElementById("past-events-list").innerHTML = outPast;
 }
 
 // function displayUpcomingEvents(data) {

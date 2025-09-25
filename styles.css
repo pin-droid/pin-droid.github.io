@@ -1374,7 +1374,7 @@ li.answer {
     height: 0.5em;
 } */
 
-.passed{
+.passed {
     text-decoration: line-through;
 }
 
@@ -1473,4 +1473,12 @@ li.answer {
     gap: 0.5em;
     justify-content: center;
     align-items: center;
+}
+
+hr {
+  border: solid;
+  height: 10px;
+  width: 80%;
+  color: white;
+  /* Set the hr color */
 }
