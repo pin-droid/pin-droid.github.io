@@ -138,6 +138,9 @@ body.pin-droid {
 
 .leader-board-entry-name-text {
     font-size: 120%;
+    overflow: hidden;
+    max-width: 28vw;
+    text-overflow: ellipsis;
 }
 
 .leader-board-entry-name {
