@@ -1,17 +1,17 @@
 {
     "current": {
-        "location": "berlin",
+        "location": "london",
         "year": "2025",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
-        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfg36oRQGQSO9np7IYqNYRtmO7qKpTxIh5trDwh6SSjFvHu9A/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl": "https://docs.google.com/spreadsheets/d/1tr9UTvrKTBc23FL-A0znqKWzA_2I9w487SA2XW8Mod4",
+        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfR8K8_AOyYB3eWl4dWDQrIiXzJ8Vqy-PclW_pxWmRpOWk9QQ/viewform?usp=dialog&entry.2113672436=",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/1OEnKRf5FV1_9PVcpFmSOgA3n_eAq2Ii2wqxEVInqD3c",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "eventsBit": "gid=1514313430#gid=1514313430",
         "scoresBit": "gid=0#gid=0",
-        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeDwKTTTXP_SlnAPQJtlFAshQNZms1B1nwWTISVWCLQKYBjBg/viewform?usp=dialog",
+        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdZ_TCZBEgKLt9zFPoMWomDrAjTqt10fhcfS_FCTHLSBPwrsg/viewform?usp=dialog",
         "prizes": [
             {
                 "rank": 1,
@@ -40,6 +40,46 @@
         ]
     },
     "past": [
+        {
+            "location": "berlin",
+            "year": "2025",
+            "mediaFolder": "/media/droidcon-bugdroid-pins",
+            "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfg36oRQGQSO9np7IYqNYRtmO7qKpTxIh5trDwh6SSjFvHu9A/viewform?usp=dialog&entry.2113672436=",
+            "publicUrl": "https://docs.google.com/spreadsheets/d/1tr9UTvrKTBc23FL-A0znqKWzA_2I9w487SA2XW8Mod4",
+            "statsBit": "gid=1572919526#gid=1572919526",
+            "pinsBit": "gid=1871628007#gid=1871628007",
+            "galleryBit": "gid=774482806#gid=774482806",
+            "stillOutThereBit": "gid=1768651266#gid=1768651266",
+            "eventsBit": "gid=1514313430#gid=1514313430",
+            "scoresBit": "gid=0#gid=0",
+            "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeDwKTTTXP_SlnAPQJtlFAshQNZms1B1nwWTISVWCLQKYBjBg/viewform?usp=dialog",
+            "prizes": [
+                {
+                    "rank": 1,
+                    "individual": true,
+                    "rankText": "1st",
+                    "link": "",
+                    "img": "prizes/r2.webp",
+                    "medalimg": "1st.png"
+                },
+                {
+                    "rank": 2,
+                    "individual": true,
+                    "rankText": "2nd",
+                    "link": "",
+                    "img": "prizes/flowers.webp",
+                    "medalimg": "2nd.png"
+                },
+                {
+                    "rank": 3,
+                    "individual": true,
+                    "rankText": "3rd",
+                    "link": "",
+                    "img": "prizes/chicken.webp",
+                    "medalimg": "3rd.png"
+                }
+            ]
+        },
         {
             "location": "ny",
             "year": "2025",
