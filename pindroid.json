@@ -18,7 +18,7 @@
                 "individual": true,
                 "rankText": "1st",
                 "link": "",
-                "img": "prizes/r2.webp",
+                "img": "prizes/starwars.webp",
                 "medalimg": "1st.png"
             },
             {
@@ -26,7 +26,7 @@
                 "individual": true,
                 "rankText": "2nd",
                 "link": "",
-                "img": "prizes/flowers.webp",
+                "img": "prizes/camera.webp",
                 "medalimg": "2nd.png"
             },
             {
@@ -34,8 +34,24 @@
                 "individual": true,
                 "rankText": "3rd",
                 "link": "",
-                "img": "prizes/chicken.webp",
+                "img": "prizes/gameboy.webp",
                 "medalimg": "3rd.png"
+            },
+            {
+                "rank": 4,
+                "individual": true,
+                "rankText": "4th",
+                "link": "",
+                "img": "prizes/chicken.webp",
+                "medalimg": null
+            },
+            {
+                "rank": 5,
+                "individual": true,
+                "rankText": "5th",
+                "link": "",
+                "img": "prizes/wings.webp",
+                "medalimg": null
             }
         ]
     },
