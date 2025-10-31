@@ -101,6 +101,8 @@ function displayPrizes(mediaFolder, prizesArr) {
         let med = ""
         if (prize.medalimg != null) {
             med = `<img class="prize-item-img-medal" src="/media/images-general/${prize.medalimg}"/>`
+        } else{ 
+            med = `<div class="prize-item-text-medal">${prize.rankText}</div>`
         }
         // <div class="prize-rank" style="font-size: ${scaleAmount}%">${prize.rankText}</div>
         out += `
