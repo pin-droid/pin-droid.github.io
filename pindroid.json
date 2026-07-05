@@ -1,17 +1,17 @@
 {
     "current": {
-        "location": "paris",
+        "location": "orlando",
         "year": "2026",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
-        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe1wKFYSA6SWbI-uMJsi1oxCZY_RgNkmFNK3Rj90W7M7iyWVw/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl": "https://docs.google.com/spreadsheets/d/1sNpxWy2i4ZJeWgHK_IUNZOkzeoezPr0m91DQRqibK9o",
+        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScMR5brThkFF_9Qh8e-HIRZDxkcJUXcyZe-dzrYdAqvh4-3qg/viewform?usp=dialog&entry.2113672436=",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/1qK6cRaeM3a5BvVOfIzz2z763quYv-lmoGZT-11nHe3E",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "eventsBit": "gid=1514313430#gid=1514313430",
         "scoresBit": "gid=0#gid=0",
-        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdKtbBy0Bk7ko8r8LGGfaVsN_X1zhr4ModT3S8ZlPv3dt3RaQ/viewform?usp=dialog ",
+        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfbhmFAUpQFqXqwTQHmj0CtjoFErvg43JTKAJ06jjhicG0tuw/viewform?usp=dialog",
         "prizes": [
             {
                 "rank": 1,
@@ -40,6 +40,46 @@
         ]
     },
     "past": [
+        {
+            "location": "paris",
+            "year": "2026",
+            "mediaFolder": "/media/droidcon-bugdroid-pins",
+            "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe1wKFYSA6SWbI-uMJsi1oxCZY_RgNkmFNK3Rj90W7M7iyWVw/viewform?usp=dialog&entry.2113672436=",
+            "publicUrl": "https://docs.google.com/spreadsheets/d/1sNpxWy2i4ZJeWgHK_IUNZOkzeoezPr0m91DQRqibK9o",
+            "statsBit": "gid=1572919526#gid=1572919526",
+            "pinsBit": "gid=1871628007#gid=1871628007",
+            "galleryBit": "gid=774482806#gid=774482806",
+            "stillOutThereBit": "gid=1768651266#gid=1768651266",
+            "eventsBit": "gid=1514313430#gid=1514313430",
+            "scoresBit": "gid=0#gid=0",
+            "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdKtbBy0Bk7ko8r8LGGfaVsN_X1zhr4ModT3S8ZlPv3dt3RaQ/viewform?usp=dialog ",
+            "prizes": [
+                {
+                    "rank": 1,
+                    "individual": true,
+                    "rankText": "1st",
+                    "link": "",
+                    "img": "prizes/notre-dame.webp",
+                    "medalimg": "1st.png"
+                },
+                {
+                    "rank": 2,
+                    "individual": true,
+                    "rankText": "2nd",
+                    "link": "",
+                    "img": "prizes/atat.webp",
+                    "medalimg": "2nd.png"
+                },
+                {
+                    "rank": 3,
+                    "individual": true,
+                    "rankText": "3rd",
+                    "link": "",
+                    "img": "prizes/back-to-future.webp",
+                    "medalimg": "3rd.png"
+                }
+            ]
+        },
         {
             "location": "london",
             "year": "2025",
