@@ -18,7 +18,7 @@
                 "individual": true,
                 "rankText": "1st",
                 "link": "",
-                "img": "prizes/notre-dame.webp",
+                "img": "prizes/r2d2.webp",
                 "medalimg": "1st.png"
             },
             {
@@ -26,7 +26,7 @@
                 "individual": true,
                 "rankText": "2nd",
                 "link": "",
-                "img": "prizes/atat.webp",
+                "img": "prizes/radio.webp",
                 "medalimg": "2nd.png"
             },
             {
@@ -34,7 +34,7 @@
                 "individual": true,
                 "rankText": "3rd",
                 "link": "",
-                "img": "prizes/back-to-future.webp",
+                "img": "prizes/walle.webp",
                 "medalimg": "3rd.png"
             }
         ]
