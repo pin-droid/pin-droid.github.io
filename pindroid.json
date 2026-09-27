@@ -1,17 +1,17 @@
 {
     "current": {
-        "location": "orlando",
+        "location": "berlin",
         "year": "2026",
         "mediaFolder": "/media/droidcon-bugdroid-pins",
-        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScMR5brThkFF_9Qh8e-HIRZDxkcJUXcyZe-dzrYdAqvh4-3qg/viewform?usp=dialog&entry.2113672436=",
-        "publicUrl": "https://docs.google.com/spreadsheets/d/1qK6cRaeM3a5BvVOfIzz2z763quYv-lmoGZT-11nHe3E",
+        "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe9k09ZRvfUojstfQ1ibEM46T4_5FLDgEbvVBvwyZc82Fxfcg/viewform?usp=dialog&entry.2113672436=",
+        "publicUrl": "https://docs.google.com/spreadsheets/d/1tO6FA338d3iEbR1LZ367VMzrT_msU4kHTt8Bk4bveGw",
         "statsBit": "gid=1572919526#gid=1572919526",
         "pinsBit": "gid=1871628007#gid=1871628007",
         "galleryBit": "gid=774482806#gid=774482806",
         "stillOutThereBit": "gid=1768651266#gid=1768651266",
         "eventsBit": "gid=1514313430#gid=1514313430",
         "scoresBit": "gid=0#gid=0",
-        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfbhmFAUpQFqXqwTQHmj0CtjoFErvg43JTKAJ06jjhicG0tuw/viewform?usp=dialog",
+        "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdzgC3drNlB4sZqWzuA5tnDZUxl88E4E79sViN9WBohtsGxgw/viewform?usp=dialog",
         "prizes": [
             {
                 "rank": 1,
@@ -40,6 +40,46 @@
         ]
     },
     "past": [
+        {
+            "location": "orlando",
+            "year": "2026",
+            "mediaFolder": "/media/droidcon-bugdroid-pins",
+            "submitFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScMR5brThkFF_9Qh8e-HIRZDxkcJUXcyZe-dzrYdAqvh4-3qg/viewform?usp=dialog&entry.2113672436=",
+            "publicUrl": "https://docs.google.com/spreadsheets/d/1qK6cRaeM3a5BvVOfIzz2z763quYv-lmoGZT-11nHe3E",
+            "statsBit": "gid=1572919526#gid=1572919526",
+            "pinsBit": "gid=1871628007#gid=1871628007",
+            "galleryBit": "gid=774482806#gid=774482806",
+            "stillOutThereBit": "gid=1768651266#gid=1768651266",
+            "eventsBit": "gid=1514313430#gid=1514313430",
+            "scoresBit": "gid=0#gid=0",
+            "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfbhmFAUpQFqXqwTQHmj0CtjoFErvg43JTKAJ06jjhicG0tuw/viewform?usp=dialog",
+            "prizes": [
+                {
+                    "rank": 1,
+                    "individual": true,
+                    "rankText": "1st",
+                    "link": "",
+                    "img": "prizes/r2d2.webp",
+                    "medalimg": "1st.png"
+                },
+                {
+                    "rank": 2,
+                    "individual": true,
+                    "rankText": "2nd",
+                    "link": "",
+                    "img": "prizes/radio.webp",
+                    "medalimg": "2nd.png"
+                },
+                {
+                    "rank": 3,
+                    "individual": true,
+                    "rankText": "3rd",
+                    "link": "",
+                    "img": "prizes/walle.webp",
+                    "medalimg": "3rd.png"
+                }
+            ]
+        },
         {
             "location": "paris",
             "year": "2026",
