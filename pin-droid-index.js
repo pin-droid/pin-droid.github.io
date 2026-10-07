@@ -28,12 +28,12 @@ INFACT, you know what... I like your style & your desperation...
     `
     const comeFindBenMessage = `
 
-Come & find Ben (in person) & tell him this code phrase:
+Come & find Ben (in person) & do the following to get a pin...
     `
     const codeWord = `
 
 ---------------------------------------------------------------
-"INSPECTED INSPECTOR, I THINK WE'VE FOUND SOMETHING OVER HERE!"
+"DONT SAY ANYTHING TO ME BEFORE HAND & DO 1 LOOP OF THE MACARENA DANCE!"
 ---------------------------------------------------------------
     `
     const outcomeMessage = `
@@ -310,7 +310,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 function addTheExtraHTML(){
     var dialogBox = document.createElement('div')
     dialogBox.id = 'dialog'
-    dialogBox.innerHTML = `<div>Tell Ben this code:<br><span>SCREW FLANDERS</span><br>if you are first, you'll get a PIN!</div>`
+    dialogBox.innerHTML = `<div></div>`
+    // dialogBox.innerHTML = `<div>Tell Ben this code:<br><span>SCREW FLANDERS</span><br>if you are first, you'll get a PIN!</div>`
     document.body.appendChild(dialogBox)
 
     setTimeout(() => {
